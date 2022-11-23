@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Sign up</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+
+        <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link rel="icon" href="../static/images/icon.png">
+        <style>
+
+            body {
+                font-size: large;
+            }
+
+            .hr-line {
+                width: 95%;
+                margin-left: 25px;
+                height: 5px;
+                background-color: #003333;
+                opacity: 50%;
+            }
+
+            .restaurant .hr-line {
+                height: 1px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background-color: #003333;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                z-index: 5;
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                padding: 10px;
+            }
+
+            nav ul li, nav ul li a {
+                margin: auto 5px;
+                padding: 5px;
+                color: aliceblue;
+                
+            }
+
+            nav ul li:hover, nav ul li a:hover {
+                transition-duration: .5s;
+                background-color: #669999;
+                cursor: pointer;
+                border-radius: 20px;
+                color: whitesmoke;
+            }
+
+            
+
+            
+            /*Main element css styles*/
+
+                        
+            main .break {
+                background-color: #669999;
+                padding: 1px;
+                padding-top: 0;
+            }
+
+            main h1 {
+                font-size: larger;
+                font-weight: bolder;
+                padding-left: 10px;
+                position: relative;
+
+                
+            }
+        
+
+            footer {
+                background-color: #407F7F;
+                height: 40px;
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 30px;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            footer address {
+                color: whitesmoke;
+                justify-self: end;
+                align-self: center;
+                padding-top: 20px;
+                margin-right: 40px;
+                opacity: 30%;
+                
+            }
+
+            footer address #green {
+                color: rgba(7, 252, 7, 0.958);
+            }
+
+            footer address #yellow {
+                color: rgba(255, 255, 0, 0.967);
+            }
+
+            footer address #red {
+                color: rgba(203, 7, 7, 0.915);
+            }
+
+            footer address:hover {
+                transition-duration: .3s;
+                opacity: 100%;
+                cursor: default;
+            }
+
+            .user-signup {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                
+                
+            }
+
+            body {
+                background-color: #407F7F;
+            }
+            .signup-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #407F7F;
+                width: 50%;
+                height: auto;
+                margin: 60px 50px;
+                padding: 60px auto;
+            }
+
+            .trailer-card {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                
+            }
+
+            .trailer-card img, .trailer-card img:not(:hover) {
+                margin-right: 0;
+                margin-top: -250px;
+                border: 4px solid #669999;
+                border-radius: 50%;
+                transform: scale(.9);
+                transition-duration: .5s;
+                
+            }
+
+            .trailer-card img:hover {
+                opacity: 90%;
+                transition-duration: .5s;
+                border-radius: 38px;
+                transform: rotate(360deg);
+                transform: scale(1);
+            }
+
+            .signup-card input {
+                background-color: #669999;
+                border: 0;
+                width: 90%;
+            }
+
+            .signup-card input:focus {
+                background-color: #bb996e;
+            }
+
+            .signup-input .sub-btn {
+                display: flex;
+                justify-content: center;
+            }
+
+            .signup-card i {
+                color: aliceblue;
+                border: 0;
+                background-color: transparent;
+                width: auto
+            }
+
+            ::placeholder {
+                color: aliceblue;
+            }
+
+            .block {
+                margin: 25px auto;
+            }
+
+            .swap {
+                display: flex;
+                padding-top: 5px;
+            }
+
+            .swap .signup-redr, .swap .login-redr {
+                background-color: #407F7F;
+                margin: auto 2px;
+                padding: 2px;
+                height: auto;
+                opacity: 50%;
+            }
+
+            .swap .signup-redr {
+                border-radius: 10px 0 0 10px;
+            }
+
+            .swap .login-redr {
+                border-radius: 0 10px 10px 0;
+            }
+
+            .swap .signup-redr:hover, .swap .login-redr:hover {
+                background-color: #669999;
+                cursor: pointer;
+                transition-duration: .6s;
+            }
+
+            .swap .swap-foc {
+                font-weight: bolder;
+                background-color: #bb996e;
+                opacity: 100% !important;
+            }
+
+            .swap .signup-redr p, .swap .login-redr p {
+                margin-top: 4px;
+            }
+
+            @media (max-width: 900px) {
+                .user-signup {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column-reverse;
+                align-items: center;
+                width: 100%;
+                
+                
+                }
+                
+                
+            }
+
+            
+        </style>
+
+    </head>
+
+
+
+<!-- Test for the restaurant html page-->
+
+
+
+
+    <body>
+        
+        <header>
+            <nav>
+                <ul>
+                    
+                </ul>
+                    <div class="ser-nav">
+                    </div>
+
+                    <div class="user-ctl">
+                        
+                    </div>
+                
+            </nav>
+        </header>
+
+        
+        <script>
+
+                function login() {
+                    $('.login-redr').removeClass('swap-foc');
+                    $('.signup-redr').addClass('swap-foc');
+                    $('h1').text('Sign up for a new using your email to continue');
+                    $('form').remove();
+                    $('.signup-input').append('<form action="/register" method="post"><div\
+                         class="block"><i class="fa-solid fa-hand-back-fist"></i><input type="text" \
+                         placeholder="First name" name="first-name" autofocus required></div><div \
+                         class="block"><i class="fa-solid fa-hand-back-fist"></i><input type="text" \
+                         placeholder="Last name" name="last-name" required></div><div class="block">\
+                            <i class="fa-solid fa-envelope-open-text"></i><input type="email" placeholder="Email Address" \
+                            name="email" required></div><div class="block"><i class="fa-solid fa-lock"></i><input type="password" \
+                                placeholder="Password" name="password" required></div><div class="block"><i class="fa-solid fa-lock">\
+                                    </i><input type="password" placeholder="Confirm your password" name="conf-password" required>\
+                                    </div><div class="sub-btn"><button type="submit" class="btn btn-primary">Sign up</button></div></form>')
+                    $('form').css("animation-play-state", "running")
+                };
+
+                function signup() {
+                    $('.signup-redr').removeClass('swap-foc');
+                    $('.login-redr').addClass('swap-foc');
+                    $('form').css("animation-play-state", "running");
+                    $('h1').text('Log in to your account using your email to continue');
+                    $('form').empty();
+                    $('form').remove();
+                    $('.signup-input').append('<form action="/authenticate" method="post"><div class="block">\
+                        <div class="block"><i class="fa-solid fa-envelope-open-text"></i><input type="email"\
+                             placeholder="Email Address" name="email" required></div><div class="block"><i\
+                                 class="fa-solid fa-lock"></i><input type="password" placeholder="Password" name="password"\
+                                  required></div><div class="sub-btn"><button type="submit" class="btn btn-success">Log In\
+                                    </button></div></form>')
+                    $('form').css("animation-play-state", "running")
+                };
+
+
+            $(document).ready(() => {
+                //alert('working')
+                
+                login();
+                $('.signup-redr').click(login);
+
+                $('.login-redr').click(signup);
+                
+            });
+        </script>
+
+        <style>
+            .signup-input {
+                width: 800px;
+                margin-left: 60px;
+                justify-self: flex-start;
+                align-self: flex-start;
+            }
+
+            .signup-card {
+                width: 60%;
+                min-width: 900px;
+                display: flex;
+                justify-content: space-around;
+                height: 75vh;
+            }
+
+            .trailer-card {
+                display: flex;
+                
+                width: 40%;
+                height: auto;
+                padding: auto;
+                margin: 0;
+            }
+
+            .trailer-card img {
+                width: 300px;
+                justify-self: flex-start;
+                align-self: flex-start;
+                
+            }
+
+            .user-signup {
+                height: 100vh;
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .swap-foc i {
+                color: #003333;
+            }
+
+            form i {
+                margin: auto 10px;
+            }
+
+
+            @keyframes swapping {
+                0% {
+                    opacity: 0%;
+                }   
+                
+                100% {
+                    opacity: 100%;
+                }
+            }
+
+            form {
+                animation-name: swapping;
+                animation-duration: .5s;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
+            }
+
+            
+        </style>
+
+        <!--Main element for the page-->
+        <main>
+            <div class="break head-line">  
+        <!-- In case the color complement palette neede, I used #003333 #0D4D4D #407F7F #669999-->
+            
+            <div class="user-signup">
+                
+                <div class="signup-card">
+                    <div class="signup-input">
+                        <div class="swap">
+                            <div class="signup-redr swap-foc">
+                                <span><p>Sign up &nbsp; <i class="fa-solid fa-user-plus"></i></p></span>
+                            </div>
+                            <div class="login-redr">
+                                <span><p>Logn in &nbsp; <i class="fa-solid fa-key"></i></p></span>
+                            </div>
+                        </div>
+                        <h1></h1>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="trailer-card">
+                    <img src="../static/images/logo.png">
+                </div>
+            </div>
+            
+
+        </main>
+
+
+        <footer>
+            <address> <span id="green">A</span>ddis<span id="yellow">R</span>evie<span id="red">W</span></address>
+        </footer>
+
+    </body>
+</html>

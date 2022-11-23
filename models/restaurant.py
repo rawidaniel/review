@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 from models.base_model import BaseModel,Base
-from sqlalchemy import Column, String, Table, ForeignKey
+from sqlalchemy import Column, String, Table, ForeignKey, BLOB, Unicode
 from sqlalchemy.orm import relationship
 
 # restaurant_food = Table("restaurant_food",Base.metadata,
@@ -14,7 +14,16 @@ class Restaurant(BaseModel, Base):
     name = Column(String(75), nullable=False)
     address = Column(String(100), nullable=False)
     description = Column(String(1024),nullable=False )
+    image = Column(String(100), nullable=False)
+    contact = Column(String(100), nullable=False)
     foods = relationship('Food', backref='restaurant',
                         cascade='all, delete, delete-orphan')
 #   foods = relationship('Food', secondary=restaurant_food,
 #                           viewonly=False, back_populates='restaurants')
+
+    def __init__(self, *args, **kwargs):
+        """initializes restaurant"""
+        super().__init__(*args, **kwargs)
+    
+    def __str__(self):
+        return "{}".format(self.name)

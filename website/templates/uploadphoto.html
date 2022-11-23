@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      href
+    />
+    <link rel="stylesheet" href="../static/styles/uploadphoto.css" />
+    <title>Upload Image</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h3>Select an image to upload</h3>
+        <p>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename%}
+    <div>
+        <img src="./static/images/uploads/{{filename}}", alt="portrate" height="200px">
+    </div>
+    <div class="copy_filename">
+      <p>copy filename {{filename}}</p>
+  </div>
+    {% endif%}
+        <form method="post" action="/uploadphoto" enctype="multipart/form-data">
+          <dl>
+            <p>
+              <input
+                type="file"
+                name="file"
+                class="form-control"
+                autocomplete="off"
+                
+              />
+            </p>
+          </dl>
+          <p>
+            <input type="submit" value="Submit" class="btn btn-info" />
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

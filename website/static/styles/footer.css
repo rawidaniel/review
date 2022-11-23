@@ -1,0 +1,34 @@
+footer {
+  background-color: #b57510;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+footer address {
+  color: whitesmoke;
+  justify-self: end;
+  align-self: center;
+  padding-top: 20px;
+  margin-right: 40px;
+  opacity: 30%;
+}
+
+footer address #green {
+  color: rgba(7, 252, 7, 0.958);
+}
+
+footer address #yellow {
+  color: rgba(255, 255, 0, 0.967);
+}
+
+footer address #red {
+  color: rgba(203, 7, 7, 0.915);
+}
+
+footer address:hover {
+  transition-duration: 0.3s;
+  opacity: 100%;
+  cursor: default;
+}

@@ -1,0 +1,117 @@
+.logo {
+  background: url(../images/icon.png);
+  background-size: 100%;
+  border-radius: 50%;
+
+  width: 40px;
+  height: 40px;
+  margin: -20px auto;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+  transform: scale(1.1);
+  opacity: 30%;
+  transition-duration: 0.8s;
+}
+
+.hr-line {
+  width: 95%;
+  margin-left: 25px;
+  height: 5px;
+  background-color: #ad4b00;
+  opacity: 50%;
+}
+
+.restaurant .hr-line {
+  height: 1px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f79205;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  font-family: "Ubuntu", sans-serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul li,
+nav ul li a {
+  margin: auto 5px;
+  padding: 5px;
+  color: aliceblue;
+}
+
+nav ul li:hover,
+nav ul li a:hover {
+  transition-duration: 0.5s;
+  background-color: #e08a00;
+  cursor: pointer;
+  border-radius: 20px;
+  color: whitesmoke;
+}
+
+.ser-nav {
+  padding: 20px auto;
+}
+
+.ser-nav input {
+  width: 20em;
+  border-radius: 10px;
+  background-color: #f5c97f;
+  color: white;
+  border: 2px solid #e08a00;
+}
+::placeholder {
+  color: white;
+  border: 0;
+}
+
+.ser-nav button {
+  /*display: none;*/
+  border: 0;
+  background-color: transparent;
+  color: aliceblue;
+}
+
+.ser-nav input:focus {
+  width: 20em;
+  transition-duration: 0.5s;
+  background-color: #e08a00;
+  border-radius: 5px;
+}
+
+/*.ser-nav input:focus + button {
+    display: inline;
+}
+
+.ser-nav button:hover {
+    color: whitesmoke;
+    transform: scale(1.3);
+    transition-duration: .3s;
+}*/
+
+.ser-nav input:not(:focus) {
+  transition-duration: 0.5s;
+}
+
+.btn-outline-danger,
+nav .user-ctl a {
+  color: rgb(168, 30, 30);
+  font-weight: bolder;
+}
+
+.btn-outline-danger:hover {
+  background-color: rgb(250, 0, 0);
+  border-color: rgb(148, 12, 12);
+}

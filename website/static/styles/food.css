@@ -1,0 +1,33 @@
+.star-rate i {
+  transition-duration: 0.3s;
+}
+
+.star-rate .fa-star {
+  color: gray;
+}
+
+.food-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -40px;
+}
+
+.food-header .price-food {
+  margin: 10px auto;
+  margin-right: 85px;
+  padding: 10px 10px;
+  font-weight: bolder;
+  font-size: larger;
+  border: 3px solid orangered;
+  border-radius: 50%;
+  color: orangered;
+  z-index: 3;
+  background-color: rgb(219, 194, 146);
+}
+
+.food-header .price-food:hover {
+  background-color: #003333;
+  color: #dff0f0;
+  border: 3px solid #669999;
+  transition-duration: 0.4s;
+}

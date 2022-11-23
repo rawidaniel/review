@@ -95,6 +95,9 @@ class DBStorage:
     def get_user_by_id(self, id):
         user = self.__session.query(User).get(id)
         return user
+    
+    def session(self):
+        return self.__session
     def close(self):
         '''
             Remove private session attribute

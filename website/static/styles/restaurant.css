@@ -1,0 +1,32 @@
+#off-can-triger {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#offcanvasExample {
+  background-color: #f5e8d3d3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/*
+ #time {
+  color: white; 
+  background-color: rgb(231, 188, 107);
+  border-radius: 15px;
+  padding-right: 27px;
+  padding-left: 19px;
+  box-shadow: rgb(172, 114, 8) 2px 2px 3px 2px;
+  border: 2px solid transparent;
+ }
+
+ #time:hover {
+  background-color: orange;
+  cursor: pointer;
+  border: 2px solid rgb(192, 132, 19);
+ }
+ */

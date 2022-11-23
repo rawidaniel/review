@@ -1,0 +1,17 @@
+
+
+$main-font-style: Arial, Sans-serif;
+$styly-font-style: Arial, Sans-serif;
+
+
+$mode: DarkMode;
+
+@mixin DarkMode {
+    
+}
+
+@mixin mode($mode) {
+    @if $mode == DarkMode {
+        
+    }
+}

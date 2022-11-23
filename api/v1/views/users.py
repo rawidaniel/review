@@ -27,7 +27,7 @@ def delete_user(user_id):
     user.delete()
     return jsonify({}), 200
 
-@all_views.route("users", methods=["POST"], strict_slashes=False)
+@all_views.route("/users", methods=["POST"], strict_slashes=False)
 def create_user():
     """Create a new user object"""
     data = request.get_json()
@@ -39,10 +39,10 @@ def create_user():
         return jsonify({"error": "Missing last name"}), 400
     elif 'password' not in data:
         return jsonify({"error": "Missing password"}), 400
-    if data.get('password_confirm') and data.get('password') != data.get("password_confirm"):
-        return jsonify({"error": "Missmatching password"}), 400
-    else:
-        return jsonify({"error": "Missing password confirmation"}), 400
+    # if data.get('password_confirm') and data.get('password') != data.get("password_confirm"):
+    #     return jsonify({"error": "Missmatching password"}), 400
+    # else:
+    #     return jsonify({"error": "Missing password confirmation"}), 400
 
     user = User(**data)
     user.save()

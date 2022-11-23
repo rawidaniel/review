@@ -1,0 +1,71 @@
+body {
+  font-size: large;
+  font-family: "Kanit", sans-serif;
+}
+main .break {
+  background-color: #c6851d;
+  padding: 1px;
+  height: 60px;
+  padding-top: 95px;
+}
+
+main h1 {
+  font-size: larger;
+  font-weight: bolder;
+  padding-left: 10px;
+  position: relative;
+}
+
+main .restaurants a {
+  text-decoration: none;
+  color: black;
+}
+
+main .restaurants a:hover {
+  text-decoration: none;
+  color: rgb(53, 26, 4);
+}
+
+main .restaurants h2 {
+  font-size: large;
+  padding-left: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main .restaurants .restaurant .restr-descr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .restaurant .description {
+  font-size: medium;
+  padding-right: 40px;
+  text-align: justify;
+  width: auto;
+}
+
+main .restaurant .img-restr {
+  width: 300px;
+  height: 160px;
+  overflow: hidden;
+  padding-right: 40px;
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+
+main .restaurants .restaurant article p {
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+
+.restaurant {
+  padding-top: 10px;
+}
+.restaurant:hover {
+  background-color: #f7910128;
+  border-radius: 16px;
+  cursor: pointer;
+}

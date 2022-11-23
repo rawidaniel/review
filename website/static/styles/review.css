@@ -1,0 +1,244 @@
+main {
+  font-family: "Kanit", sans-serif;
+}
+
+main h1 {
+  font-size: larger;
+  font-weight: bolder;
+  padding-left: 10px;
+  position: relative;
+}
+main .restaurants h2 {
+  font-size: large;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+main .restaurants .restaurant .restr-descr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .restaurant .description {
+  font-size: medium;
+  padding-right: 40px;
+  text-align: justify;
+  width: auto;
+}
+
+main .restaurant .img-restr {
+  width: 500px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 18px;
+  margin-top: 20px;
+}
+
+.star-rate i {
+  transition-duration: 0.3s;
+}
+
+.star-rate .fa-star {
+  color: gray;
+}
+
+.star-rate .fa-star:hover {
+  transition: 0.3s;
+}
+
+.leave-comment input {
+  /*    animation-name: comment;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    padding: 0; 
+    margin: 0;
+    border: 0;
+    border-radius: 0 15px 15px 15px;
+    */
+  background-color: #fdf7eb;
+  border: 2px solid #f8d796;
+  border-radius: 5px;
+  box-shadow: gray 2px 2px 4px 3px;
+  height: 100px;
+  width: 80%;
+}
+
+.leave-comment {
+  margin-left: 40px;
+}
+
+.leave-comment input:focus {
+  border: 5px solid #ea9e07;
+}
+
+::placeholder {
+  padding-left: 40px;
+  color: black;
+}
+
+.btn-outline-primary {
+  visibility: hidden;
+}
+
+.star-rate {
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.read-comment {
+  margin-left: 40px;
+  background-color: #fbef4d6d;
+  width: 80%;
+  border-radius: 4px;
+  padding: 20px 40px;
+  margin-top: 40px;
+}
+
+.read-comment {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.read-comment #scr-cmt {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.read-comment #read-cmt {
+  color: #e98e1f !important;
+  font-weight: 550 !important;
+}
+
+.usr-comment {
+  margin-left: 50px;
+  margin-top: 50px;
+  background-color: rgba(127, 255, 212, 0.342);
+  max-width: 70%;
+  padding: 10px;
+}
+
+.usr-comment #cmt-hd {
+  font-weight: 600;
+}
+
+.usr-comment .this-usr-comment {
+  background-color: rgb(253, 247, 155);
+  padding: 3px 5px;
+  border-radius: 9px;
+}
+
+.comment-writer {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 15% 10% 1fr;
+  box-shadow: 5px 5px 10px 5px gray;
+  margin: 5px auto;
+  padding-bottom: 25px;
+  padding-left: 5px;
+  width: auto;
+}
+
+.comment-writer .fa-shield-heart {
+  color: #e98e1f !important;
+}
+
+.comment-writer .fa-comment {
+  color: rgb(46, 46, 226) !important;
+}
+
+.comment-writer .fa-user-tie {
+  color: rgb(52, 95, 3) !important;
+}
+
+.price-food {
+  z-index: 2;
+  margin-left: -100px;
+  justify-self: flex-start;
+  font-weight: bolder;
+  font-size: larger;
+  border: 3px solid #f8d796;
+  border-radius: 50%;
+  padding: 15px;
+  background-color: #e98e1f;
+  color: #ddecec;
+}
+
+.price-food:hover {
+  background-color: #faecd1;
+  color: #e98e1f;
+  border: 3px solid orange;
+}
+
+#img-prc {
+  display: flex;
+  align-items: flex-start;
+}
+
+#img-prc:hover {
+  opacity: 80%;
+  transition-duration: 0.5s;
+}
+
+.food-spec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rest-add {
+  margin-right: 60px;
+}
+
+.rest-add .rest-cont,
+.rest-add .rest-loca {
+  margin: 15px 5px;
+}
+
+.rest-add .rest-cont .fa-copy:hover,
+.rest-add .rest-loca .fa-copy:hover {
+  color: rgb(235, 94, 43);
+}
+
+.star-rate-noedit:hover {
+  color: rgb(247, 88, 14);
+  transform: scale(1.05);
+  transition-duration: 0.2s;
+}
+
+#alert-user {
+  height: 10px !important;
+}
+
+.alert-danger,
+.alert-success {
+  box-shadow: black 2px 2px 5px 2px;
+}
+
+@keyframes comment {
+  1% {
+    width: 0%;
+    height: 0px;
+    background-color: white;
+    margin-left: 0px;
+    border: 3px solid black;
+    display: block;
+  }
+
+  50% {
+    width: 60%;
+    height: 70px;
+    background-color: rgba(238, 186, 95, 0.455);
+    margin-left: 60px;
+  }
+
+  100% {
+    width: 80%;
+    height: 100px;
+    margin-left: 80px;
+    background-color: rgba(238, 185, 95, 0.725);
+    color: white;
+    padding-left: 40px;
+  }
+}

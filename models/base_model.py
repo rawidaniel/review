@@ -7,8 +7,12 @@ import models
 time = "%Y-%m-%dT%H:%M:%S.%f"
 Base = declarative_base()
 
+def generate_uuid():
+    """return UUID value converted to string"""
+    return str(uuid.uuid4())
+
 class BaseModel:
-    id = Column(String(60), nullable=False, primary_key=True)
+    id = Column(String(75), nullable=False, primary_key=True, default=generate_uuid)
     created_on = Column(DateTime, default=dt.utcnow, nullable=False)
     updated_on = Column(DateTime, default=dt.utcnow, nullable=False)
     def __init__(self, *args, **kwargs):
@@ -36,6 +40,11 @@ class BaseModel:
       models.storage.new(self)
       models.storage.save()
     
+    def delete(self):
+        """Delete object"""
+        models.storage.delete(self)
+        models.storage.save()
+
     def to_dict(self):
         new_dict = {}
         new_dict["__class__"] = self.__class__.__name__
@@ -46,11 +55,9 @@ class BaseModel:
                 new_dict[key] = val
         if "_sa_instance_state" in new_dict:
             del new_dict["_sa_instance_state"]
+        if "password" in new_dict:
+            del new_dict["password"]
         return new_dict
 
-    def delete(self):
-        """Delete object"""
-        models.storage.delete(self)
-        models.storage.save()
     def __str__(self):
       return '[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__)

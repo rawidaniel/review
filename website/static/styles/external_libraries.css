@@ -1,0 +1,101 @@
+main #sceine-one {
+  background-color: #003333;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 60px;
+}
+
+main #sceine-two {
+  background-color: #faa125;
+  height: 100vh;
+  width: 100vw;
+}
+
+main #sceine-three {
+  background-color: #43a450;
+  height: 100vh;
+  width: 100vw;
+}
+
+main #sceine-four {
+  background-color: #0c4d74;
+  height: 100vh;
+  width: 100vw;
+}
+
+main #sceine-five {
+  background-color: #440ea7;
+  height: 100vh;
+  width: 100vw;
+}
+
+nav {
+  text-align: center;
+  font-weight: bolder;
+  font-size: larger;
+  background-color: #258383;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  padding-top: 10px;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  right: 0;
+  bottom: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 3;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 50px;
+  align-items: center;
+  padding-left: -10px;
+}
+
+nav ul li {
+  color: white;
+  margin: auto 5px;
+  text-decoration: none;
+  opacity: 0.75;
+  text-decoration: none;
+  margin: auto 5px;
+  border-bottom: 3px solid transparent;
+}
+
+nav ul li:hover {
+  border-bottom: 3px solid white;
+  transition-duration: 0.2s;
+  opacity: 1;
+  margin-bottom: -3px;
+}
+
+nav ul a {
+  text-decoration: none;
+}
+
+nav i {
+  color: #d8e9e9;
+  padding-top: 5px;
+  font-size: larger;
+  visibility: hidden;
+}
+
+.sceine-four .how-to {
+  display: flex;
+}
