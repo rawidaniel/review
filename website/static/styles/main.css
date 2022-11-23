@@ -1,9 +1,19 @@
+:root {
+  --color-primary: #f79205;
+  --color-secondary: #c6851d;
+  --font-size-large: 1.85rem;
+  --font-size-medium: 1.3rem;
+  --line-height: 2.5rem;
+  --font-family: 'Kanit', sans-serif;
+}
+
 body {
-  font-size: large;
-  font-family: "Kanit", sans-serif;
+  font-size: var(--font-size-large);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
 }
 main .break {
-  background-color: #c6851d;
+  background-color: var(--color-secondary);
   padding: 1px;
   height: 60px;
   padding-top: 95px;

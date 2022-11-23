@@ -1,19 +1,22 @@
 main #sceine-one {
   /*background-color: #003333;*/
-  background: linear-gradient(40deg, orange, orangered);
+  background: url(../images/biruk-gashawbeza-Fq-5Sd64p0Q-unsplash.jpg);
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   padding-top: 60px;
 }
 
 main #sceine-two {
-  background-color: #faa125;
+  background-color: orangered;
   height: 100vh;
   width: 100vw;
 }
 
 main #sceine-three {
-  background-color: #43a450;
+  background: url(../images/patrick-tomasso-fMntI8HAAB8-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
 }
@@ -34,7 +37,7 @@ nav {
   text-align: center;
   font-weight: bolder;
   font-size: larger;
-  background: linear-gradient(40deg, orange, orangered);
+  background: linear-gradient(40deg, rgb(145, 124, 7), rgb(0, 0, 0));
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +52,7 @@ main {
   left: -1px;
   right: 0;
   bottom: 0;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 html {
@@ -91,11 +94,10 @@ nav ul a {
   text-decoration: none;
 }
 
-nav i {
-  color: #d8e9e9;
-  padding-top: 5px;
-  font-size: larger;
-  visibility: hidden;
+nav ul #menu {
+  color: white;
+  text-shadow: 3px 3px 10px black;
+  display: none;
 }
 
 .sceine-four .how-to {
@@ -115,6 +117,17 @@ nav i {
 
 #sceine-one #welcome h1 {
   font-size: 2.5rem;
+  background-color: white;
+  color: black;
+  text-shadow: 4px 4px 16px black;
+  border-radius: 10px;
+}
+
+#sceine-one #welcome p {
+  font-size: 1.5rem;
+  background-color: darkgray;
+  text-shadow: 4px 4px 16px black;
+  opacity: 0.75;
 }
 
 #sceine-one #welcome h1 span {
@@ -154,19 +167,33 @@ main section h2 {
   flex-direction: column;
 }
 
-.container .cont-img div:first-of-type img {
-  opacity: 1;
-  width: 80%;
-  z-index: 1;
+.container .cont-img #img-shw img {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  width: 50%;
+  height: 55%;
+  object-fit: cover;
   border-radius: 15%;
 }
 
-.container .cont-img div:last-of-type img {
-  width: 30%;
+.container .cont-img #img-shw {
   position: relative;
-  top: -60px;
-  left: -20px;
-  border-radius: 25%;
+}
+
+.container .cont-img #img-shw #img-two {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+.container .cont-img #img-shw #img-three {
+  position: absolute;
+  right: 40%;
+  top: 20%;
+}
+
+#sceine-three .container #cont-svg,
+#sceine-three .container .cont-txt {
+  background-color: whitesmoke;
+  opacity: 0.65;
 }
 
 .bar:hover {
@@ -397,22 +424,49 @@ text {
 
 @media (width < 1000px) {
   nav {
-    background-color: orange;
-    height: 6%;
+    height: 5rem;
+    overflow: hidden;
+    display: block;
+    transition: height 0.5s;
+  }
+
+  .show {
+    height: auto;
+  }
+
+  .hide {
+    height: 5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   nav ul div a li {
     font-size: 3em;
-    margin: auto 0.5em;
+    margin: 0.5rem auto;
+    border-bottom: 5px solid white;
+  }
+
+  nav ul #menu {
+    display: inline-block;
+  }
+
+  nav ul #menu i {
+    font-size: 3.5rem;
   }
 
   main #sceine-one #welcome h1 {
     font-size: 5em;
     text-align: center;
+    background-color: lightgray;
+    color: #998f06;
+    text-shadow: 2px 2px 6px black;
   }
 
   main #sceine-one #welcome h1 span {
-    color: black;
+    color: rgb(206, 151, 11);
     font-weight: 5em;
     font-size: 2em;
   }
@@ -529,6 +583,10 @@ text {
   #sceine-three .container {
     display: flex;
     flex-direction: column-reverse;
+  }
+
+  #sceine-three .container #cont-svg {
+    display: none;
   }
 
   #sceine-three .container .cont-txt,

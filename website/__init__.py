@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify, redirect, url_for, flash, render_temp
 from flask_login import LoginManager, current_user
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-import urllib.request
 import os
 from werkzeug.utils import secure_filename
 
@@ -81,31 +80,31 @@ def create_app():
         return storage.get_user_by_id(user_id)    
 
             
-    @app.route('/api/rate', methods=["POST"])
-    def rate():
-        print(request.json["rate"])
-        result = {'status': 'success'}
-        return result, 201
+    # @app.route('/api/rate', methods=["POST"])
+    # def rate():
+    #     print(request.json["rate"])
+    #     result = {'status': 'success'}
+    #     return result, 201
 
     
-    @app.route('/api/review', methods=["GET", "POST", "DELETE"])
-    def review():
-        if request.method == "POST":
-            print(request.json["review_text"])
-            result = {'status': 'success'}
-            return result, 201
-        elif request.method == "DELETE":
-            print("review deleted")
-            result = {'status': 'success'}
-            return result, 204
-        elif request.method == "GET":
-            keys = ["rate", "review"]
-            values = [3, "I liked it so far"]
-            user_review = {}
+    # @app.route('/api/review', methods=["GET", "POST", "DELETE"])
+    # def review():
+    #     if request.method == "POST":
+    #         print(request.json["review_text"])
+    #         result = {'status': 'success'}
+    #         return result, 201
+    #     elif request.method == "DELETE":
+    #         print("review deleted")
+    #         result = {'status': 'success'}
+    #         return result, 204
+    #     elif request.method == "GET":
+    #         keys = ["rate", "review"]
+    #         values = [3, "I liked it so far"]
+    #         user_review = {}
 
-            for i in range(len(keys)):
-                user_review[keys[i]] = values[i]
+    #         for i in range(len(keys)):
+    #             user_review[keys[i]] = values[i]
 
-            return jsonify(user_review)
+    #         return jsonify(user_review)
 
     return app
