@@ -8,7 +8,7 @@ def averageRate(rate):
     total = 0
     for num in rate:
         total += num
-    return round(total / len(rate), 1)
+    return round(total / len(rate) if len(rate) > 0 else 0, 1)
 
 @main.route("/")
 def landing():
@@ -47,8 +47,8 @@ def reviews():
     foodRate = [val.rate for val in reviews]
     foodRate = averageRate(foodRate)
     restaurant_contact="+251 93939483"
-    food_image = "https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg"
+    # food_image = "https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg"
    
     return render_template("review.html", restaurant=restaurant, foodRate=foodRate, food=food,
-                           user_id=current_user.id, food_image=food_image, user_name=current_user.first_name,
-                           reviews=reviews, restaurant_contact=restaurant_contact)
+                           user_id=current_user.id, user_name=current_user.first_name,
+                           reviews=reviews)

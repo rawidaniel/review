@@ -18,7 +18,7 @@ from models import *
 # dishes that are vegan, without the use of any animal products.""")
 # kategna.save()
 
-# natani = Restaurant(name="natani", contact="+251967893890",image="natani.jpg", address= "Bole",description="""staff and warm decor makes KATEGNA the 
+# natani = Restaurant(name="Natani", contact="+251967893890",image="natani.jpg", address= "Bole",description="""staff and warm decor makes KATEGNA the 
 # perfect place to relax with family and friends. While we offer many traditional Ethiopian meat dishes, 
 # we are sensitive to the needs of our vegan customers. Traditionally we prepare many authentic Ethiopian 
 # dishes that are vegan, without the use of any animal products.""")

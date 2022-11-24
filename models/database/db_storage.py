@@ -24,10 +24,10 @@ class DBStorage:
         '''
             Create engine and link to MySQL databse (hbnb_dev, hbnb_dev_db)
         '''
-        user = getenv("HBNB_MYSQL_USER")
-        pwd = getenv("HBNB_MYSQL_PWD")
-        host = getenv("HBNB_MYSQL_HOST")
-        db = getenv("HBNB_MYSQL_DB")
+        user = getenv("HBNB_MYSQL_USER", "hbnb_addis_review")
+        pwd = getenv("HBNB_MYSQL_PWD", "addisreview")
+        host = getenv("HBNB_MYSQL_HOST", "localhost")
+        db = getenv("HBNB_MYSQL_DB", "hbnb_addis_review_db")
         envv = getenv("HBNB_ENV", "none")
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(
             user, pwd, host, db), pool_pre_ping=True)
