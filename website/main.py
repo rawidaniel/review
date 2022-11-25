@@ -5,11 +5,13 @@ from models import storage
 main = Blueprint("main", __name__)
 
 def averageRate(rate):
+    """Retervie the total rate of food review"""
     total = 0
     for num in rate:
         total += num
     return round(total / len(rate) if len(rate) > 0 else 0, 1)
 
+food_rate = 0
 @main.route("/")
 def landing():
     return render_template("landing.html")
@@ -24,6 +26,21 @@ def restaurants():
                          user_id=current_user.id,
                            user_name=current_user.first_name, user_is_admin= current_user.is_admin)
 
+@main.route('/reviews')
+def reviews():
+    restaurant_id = request.args.get("restaurant_id")
+    food_id = request.args.get('food_id')
+    food = storage.get("Food", food_id)
+    restaurant = storage.get("Restaurant", restaurant_id)
+    reviews = food.reviews
+    foodRate = [val.rate for val in reviews]
+    food_rate = averageRate(foodRate)
+    restaurant_contact="+251 93939483"
+    # food_image = "https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg"
+   
+    return render_template("review.html", restaurant=restaurant, food_rate=food_rate, food=food,
+                           user_id=current_user.id, user_name=current_user.first_name,
+                           reviews=reviews)
 
 @main.route('/foods')
 def foods():
@@ -37,18 +54,3 @@ def foods():
                            user_name=current_user.first_name, food_rate=4.6 )
 
 
-@main.route('/reviews')
-def reviews():
-    restaurant_id = request.args.get("restaurant_id")
-    food_id = request.args.get('food_id')
-    food = storage.get("Food", food_id)
-    restaurant = storage.get("Restaurant", restaurant_id)
-    reviews = food.reviews
-    foodRate = [val.rate for val in reviews]
-    foodRate = averageRate(foodRate)
-    restaurant_contact="+251 93939483"
-    # food_image = "https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg"
-   
-    return render_template("review.html", restaurant=restaurant, foodRate=foodRate, food=food,
-                           user_id=current_user.id, user_name=current_user.first_name,
-                           reviews=reviews)

@@ -24,6 +24,10 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     
+    @app.teardown_appcontext
+    def close_db(error):
+        """ Remove the current SQLAlchemy Session """
+        storage.close()
     
     def allowed_file(filename):
         return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
