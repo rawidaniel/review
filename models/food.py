@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" holds class Food"""
 from models.base_model import BaseModel, Base
 # from models.restaurant import restaurant_food
 from sqlalchemy import Column, String, Float, ForeignKey

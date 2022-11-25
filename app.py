@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+
+"""
+Run flask application
+"""
 from website import create_app
 
 app = create_app()

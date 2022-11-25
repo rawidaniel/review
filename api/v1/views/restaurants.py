@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+'''
+    RESTful API for class Restaurant
+'''
 from api.v1.views import all_views
 from models import storage
 from flask import jsonify, abort, request

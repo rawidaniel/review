@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+'''
+    RESTful API for status and total number of each class object
+'''
 from api.v1.views import all_views
 from flask import jsonify
 from models import classes, storage

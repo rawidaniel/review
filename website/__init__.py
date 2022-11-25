@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Initalize flask application for website
+"""
 from flask import Flask, request, jsonify, redirect, url_for, flash, render_template
 from flask_login import LoginManager, current_user
 from flask_admin import Admin, AdminIndexView
@@ -8,6 +12,7 @@ from werkzeug.utils import secure_filename
 
 
 def create_app():
+    """Create Flask instance"""
     app = Flask(__name__)
     app.config['SECRET_KEY'] = "secret_key_goes_here"
     UPLOAD_FOLDER = 'website/static/images/uploads/'
@@ -30,10 +35,12 @@ def create_app():
         storage.close()
     
     def allowed_file(filename):
+        """Reterive true for allowed extensions or false"""
         return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
     @app.route("/uploadphoto", methods=["POST", "GET"])
     def uploadphoto():
+        """Upload image into specified directory on filesystem"""
         if request.method == 'POST':
             if 'file' not in request.files:
                 flash('No file part')
@@ -60,13 +67,14 @@ def create_app():
     from models.user import User
 
 
-    class MyModelView(ModelView):
-        create_template = 'my_create_template.html'
     class MyAdminIndexView(AdminIndexView):
+        """administrative interface index page"""
         def is_accessible(self):
+            """method to add permission checks"""
             if current_user.is_admin == True:
                 return current_user.is_authenticated
         def inaccessible_callback(self, name, **kwargs):
+            """Handle the response to inaccessible views"""
             if current_user.is_admin == False:
                 return redirect(url_for("main.restaurants"))
 
@@ -74,13 +82,14 @@ def create_app():
     admin.add_view(ModelView(User, storage.session()))
     admin.add_view(ModelView(Food, storage.session()))
     admin.add_view(ModelView(Review, storage.session()))
-    admin.add_view(MyModelView(Restaurant, storage.session()))
+    admin.add_view(ModelView(Restaurant, storage.session()))
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(user_id):
+        """Reterive user object from the user ID stored in the session"""
         return storage.get_user_by_id(user_id)    
 
             
@@ -110,5 +119,4 @@ def create_app():
                 user_review[keys[i]] = values[i]
 
             return jsonify(user_review)
-
     return app

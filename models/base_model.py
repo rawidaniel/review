@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+holds class BaseModel
+"""
 import uuid
 from datetime import datetime as dt
 from sqlalchemy import Column, String, DateTime

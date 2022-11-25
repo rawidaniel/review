@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" holds class Review"""
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey, Float
 class Review(BaseModel, Base):
@@ -13,4 +14,4 @@ class Review(BaseModel, Base):
         super().__init__(*args, **kwargs)
 
     def __str__(self):
-        return "{}".format(self.text)
+        return "(*{}) {}".format(self.rate, self.text)

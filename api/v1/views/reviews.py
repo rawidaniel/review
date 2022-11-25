@@ -7,30 +7,6 @@ from models import storage
 from api.v1.views import all_views
 from models.review import Review
 
-# @all_views.route('/api/review', methods=["GET", "POST", "DELETE"])
-# def review():
-#         if request.method == "POST":
-#             print(request.json["review_text"])
-#             result = {'status': 'success'}
-#             return result, 201
-#         elif request.method == "DELETE":
-#             print("review deleted")
-#             result = {'status': 'success'}
-#             return result, 204
-#         elif request.method == "GET":
-#             keys = ["rate", "review"]
-#             values = [3, "I liked it so far"]
-#             user_review = {}
-
-#             for i in range(len(keys)):
-#                 user_review[keys[i]] = values[i]
-
-#             return jsonify(user_review)
-# @all_views.route('/api/v1/review/rate', methods=["POST"])
-# def rate():
-#         print(request.json["rate"])
-#         result = {'status': 'success'}
-#         return result, 201
 
 
 @all_views.route('/foods/<food_id>/reviews', methods=['GET'],
@@ -84,8 +60,8 @@ def create_review(food_id):
         return jsonify({"error": "Missing user_id"}), 400
     elif storage.get("User", request.get_json()["user_id"]) is None:
         abort(404)
-    elif "text" not in request.get_json():
-        return jsonify({"error": "Missing text"}), 400
+    elif "rate" not in request.get_json():
+        return jsonify({"error": "Missing rate"}), 400
     else:
         data = request.get_json()
         obj = Review(**data)

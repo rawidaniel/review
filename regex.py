@@ -27,7 +27,18 @@ Mr. T
 
 sentence = 'Start a sentence and then bring it to an end'
 
-pattern = re.compile(r'[^b]at')
-matches = pattern.finditer(text_to_search)
-for match in matches:
-  print(match)
+emails = '''
+CoreyMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+'''
+urls = '''
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+'''
+pattern = re.compile(r'\ba\w?\b')
+
+matches = pattern.search(sentence)
+print(matches)

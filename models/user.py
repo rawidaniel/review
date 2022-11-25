@@ -1,5 +1,5 @@
-#!/usr/bin/python
-
+#!/usr/bin/python3
+""" holds class User"""
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Boolean
 from sqlalchemy.orm import relationship

@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Initalize flask application for RESTful API
+"""
 from flask import Flask, make_response, jsonify
 from os import getenv
 from models import storage
