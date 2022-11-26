@@ -1,3 +1,4 @@
+@import url(./main.scss);
 @import url(./normalize.css);
 
 :root {
@@ -80,4 +81,34 @@ main .restaurants .restaurant article p {
   background-color: #f7910128;
   border-radius: 16px;
   cursor: pointer;
+}
+
+
+
+@media (width < 1000px) {
+
+  main h1 {
+    font-size: 7rem;
+  }
+
+  main .restaurants h2 {
+    font-size: 6rem;
+  }
+
+
+  main .restaurant .description {
+    font-size: 5rem;
+    line-height: 1.5;
+  }
+
+  .restr-descr {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  main .restaurant .img-restr {
+    width: 90vw;
+    height: auto;
+  }
+
 }

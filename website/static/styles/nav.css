@@ -1,4 +1,4 @@
-@import url(./normalize.css);
+@import url(./main.scss);
 
 :root {
   --color-primary: #f79205;
@@ -126,3 +126,69 @@ nav .user-ctl a {
   background-color: rgb(250, 0, 0);
   border-color: rgb(148, 12, 12);
 }
+
+#nav-menu {
+  display: none;
+}
+
+
+@media (width < 1000px) {
+  nav {
+    font-size: 6rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    height: 8rem;
+    overflow: hidden;
+    row-gap: 5rem;
+    transition: all 0.5s;
+  }
+
+  #nav-menu {
+    display: inline-block;
+  }
+
+  .show {
+    height: auto;
+  }
+
+  .hide {
+    height: 8rem;
+  }
+
+  nav #nav-menu i {
+    font-size: 8rem;
+    transition: all .5s;
+  }
+
+  nav .user-ctl a, nav .user-ctl i {
+    font-size: 6rem;
+
+  }
+
+  nav .user-ctl button {
+    margin-left: 25rem;
+  }
+
+  nav .user-ctl {
+    order: 4;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-start;
+    order: 3;
+  }
+
+  nav ul li {
+    margin-left: 5rem
+  }
+
+
+
+  .logo {
+    display: none;
+  }
+
+}
+
