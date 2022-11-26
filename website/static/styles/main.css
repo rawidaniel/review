@@ -111,4 +111,9 @@ main .restaurants .restaurant article p {
     height: auto;
   }
 
+  main .restaurants h2 {
+    font-size: 6rem;
+    z-index: 1;
+  }
+
 }

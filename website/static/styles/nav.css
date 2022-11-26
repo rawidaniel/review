@@ -142,6 +142,7 @@ nav .user-ctl a {
     overflow: hidden;
     row-gap: 5rem;
     transition: all 0.5s;
+    z-index: 5;
   }
 
   #nav-menu {
