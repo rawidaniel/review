@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>welcome</title>
+    <!--Import necessary css and scss files-->
+    <link rel="stylesheet" href="../static/styles/landing.css" />
+    <link rel="stylesheet" href="../static/styles/normalize.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="../static/images/mini-icon-2.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/7d3bc7f2d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../static/scripts/external_libraries.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/scripts/landing.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+
+  <body>
+    <!--HTML ELEMENT SECTION-->
+
+    <header>
+      <!--Navigation bar-->
+      <nav>
+        <ul>
+          <div id="menu">
+            <li>
+              <i class="fa-solid fa-bars"></i>
+            </li>
+          </div>
+          <div class="navbar">
+            <a href="#sceine-two" class="nav-link nav-link-fade-up">
+              <li>Info</li>
+            </a>
+          </div>
+          <div class="navbar">
+            <a href="#sceine-three" class="nav-link nav-link-fade-up">
+              <li>Services</li>
+            </a>
+          </div>
+          <div class="navbar">
+            <a href="#sceine-four" class="nav-link nav-link-fade-up">
+              <li>Help</li>
+            </a>
+          </div>
+          <div class="navbar">
+            <a href="#sceine-five" class="nav-link nav-link-fade-up">
+              <li>Contact</li>
+            </a>
+          </div>
+          <div class="navbar">
+            <a href="/signup" class="nav-link nav-link-fade-up">
+              <li>Signup</li>
+            </a>
+          </div>
+          <div class="navbar">
+            <a href="/login" class="nav-link nav-link-fade-up">
+              <li>Login</li>
+            </a>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!--Welcoming page -->
+      <section id="sceine-one">
+        <div>
+          <img
+            src="../static/images/webp/logo.webp"
+            class="animate__animated animate__swing"
+          />
+        </div>
+        <div id="welcome">
+          <h1 class="animate__animated animate__zoomInDown">
+            Welcome To <span>ADDIS-REVIEW</span> ...
+          </h1>
+          <p class="animate__animated animate__zoomInDown">
+            A place where you get to review the foods in addis ababa
+          </p>
+        </div>
+      </section>
+
+      <!--Info page-->
+      <section id="sceine-two">
+        <h2>Where am I &nbsp; <i class="fa-solid fa-question"></i></h2>
+        <div class="container">
+          <div class="cont-img" data-aos="fade-up">
+            <div id="img-shw">
+              <img src="../static/images/webp/veges.webp" alt="" id="img-one" />
+              <img src="../static/images/webp/pizza.webp" alt="" id="img-two" />
+              <img
+                src="../static/images/webp/fries.webp"
+                alt=""
+                id="img-three"
+              />
+            </div>
+          </div>
+          <div class="cont-txt" data-aos="fade-left">
+            <p>
+              This is a website for choosing delicious foods &nbsp;
+              <i class="fa-solid fa-bowl-food"></i>. You can review and rate
+              restaurants' foods here
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Services page-->
+      <section id="sceine-three">
+        <h2>Our Customers and Services</h2>
+        <div class="container" data-aos="flip-up">
+          <div id="cont-svg">
+            <!--SVG D3 Graph for this page-->
+            <script src="../static/scripts/svg.js"></script>
+          </div>
+          <div class="cont-txt">
+            <p>
+              We have over <span id="user-number"></span> users with more than
+              <span id="food-number"></span> foods and
+              <span id="restaurant-number"></span> restaurants ! There are
+              already <span id="review-number"></span> reviews. <br /><span
+                class="triger"
+                ><i class="fa-solid fa-hand-point-up"></i> &nbsp; Hover on the
+                SVG graph for more detail</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Help page-->
+      <section id="sceine-four">
+        <h2>How to use the website</h2>
+        <br />
+        <div class="how-to">
+          <div id="step-one">
+            <div class="txt-cnt">
+              <p class="cntr">1</p>
+              <p>Step 1: first of all you need to create a new account</p>
+              <a href="/signup"
+                ><span class="triger"
+                  >Create new account &nbsp;
+                  <i class="fa-solid fa-plus"></i></span
+              ></a>
+            </div>
+            <div class="img-cnt" data-aos="fade-up-left">
+              <img src="../static/images/webp/signup.webp" />
+            </div>
+          </div>
+          <div class="step-two">
+            <div class="txt-cnt">
+              <p class="cntr">2</p>
+              <p>Step 2: Choose you restaurant you want to dine at</p>
+            </div>
+            <div class="img-cnt" data-aos="fade-up-right">
+              <img src="../static/images/webp/restaurant.webp" />
+            </div>
+          </div>
+          <div class="step-three">
+            <div class="txt-cnt">
+              <p class="cntr">3</p>
+              <p>
+                Step 3: Here are food lists of your chosed restaurant.
+                <br /><br />Click on the food to see more about the food.
+              </p>
+            </div>
+            <div class="img-cnt" data-aos="fade-up-left">
+              <img src="../static/images/webp/food.webp" />
+            </div>
+          </div>
+          <div class="step-four">
+            <div class="txt-cnt">
+              <p class="cntr">4</p>
+              <p>
+                Step 4:
+                <span class="bang"
+                  >BOOM! &nbsp; <i class="fa-solid fa-explosion"></i
+                ></span>
+                <br /><br />Here you can read write review, rate,
+                <br /><br />and see the address of the restaurant.
+              </p>
+            </div>
+            <div class="img-cnt" data-aos="fade-up-right">
+              <img src="../static/images/webp/review.webp" />
+            </div>
+          </div>
+          <div class="step-five">
+            <div class="txt-cnt">
+              <p class="cntr">5</p>
+              <p>
+                Go, create an account and explore it for yourself !! &nbsp;
+                <i class="fa-solid fa-face-smile-wink"></i>
+              </p>
+              <a href="/signup"><span>Create new account</span></a>
+            </div>
+            <div class="img-cnt" data-aos="fade-up-left">
+              <img src="../static/images/webp/review-write.webp" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Contact page-->
+      <section id="sceine-five">
+        <h2>About us</h2>
+        <div class="org">
+          <div>
+            <p>
+              <span>Developers</span>&nbsp; <i class="fa-solid fa-code"></i>:
+            </p>
+            <ul>
+              <li>
+                Rawi Daniel &nbsp; &nbsp;
+                <i class="fa-brands fa-square-github"></i> &nbsp;
+                <i class="fa-brands fa-linkedin"></i> &nbsp;
+                <i class="fa-brands fa-facebook"></i> &nbsp;
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <a></a>
+              <li>
+                Ikram Awol &nbsp; &nbsp;
+                <i class="fa-brands fa-square-github"></i> &nbsp;
+                <i class="fa-brands fa-linkedin"></i> &nbsp;
+                <i class="fa-brands fa-facebook"></i> &nbsp;
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <li>
+                Abenezer Eshetie &nbsp; &nbsp;
+                <i class="fa-brands fa-square-github"></i> &nbsp;
+                <i class="fa-brands fa-linkedin"></i> &nbsp;
+                <i class="fa-brands fa-facebook"></i> &nbsp;
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              <span>Technologies</span>&nbsp;
+              <i class="fa-solid fa-laptop-code"></i>:
+            </p>
+            <ul>
+              <li><i class="fa-brands fa-python"></i> &nbsp; Python, Flask</li>
+              <li><i class="fa-brands fa-html5"></i> &nbsp; HTML & CSS</li>
+              <li>
+                <i class="fa-brands fa-square-js"></i> &nbsp; JavaScript JQuery
+                d3.js
+              </li>
+              <li><i class="fa-brands fa-bootstrap"></i> &nbsp; bootstrap</li>
+              <li>
+                <i class="fa-solid fa-font-awesome"></i> &nbsp; FontAwesome
+              </li>
+              <li><i class="fa-brands fa-sass"></i> &nbsp; Sass</li>
+              <li>
+                <i class="fa-brands fa-github"></i> &nbsp; GitHub, Github Flow,
+                Github Actions
+              </li>
+              <li><i class="fa-brands fa-docker"></i> &nbsp; Docker, Shell</li>
+              <li><i class="fa-solid fa-database"></i> &nbsp; MySQL</li>
+              <li>
+                <i class="fa-brands fa-google"></i> &nbsp; googleapis fonts
+              </li>
+              <li>
+                <i class="fa-brands fa-unsplash"></i> &nbsp; Unsplash &amp;
+                Pexels
+              </li>
+            </ul>
+          </div>
+          <p id="slogan">
+            Made with <i class="fa-solid fa-heart"></i> by ALX-SE Students
+          </p>
+          <div id="school">
+            <p>ALX - Software Engineering School</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

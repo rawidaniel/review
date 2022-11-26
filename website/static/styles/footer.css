@@ -1,9 +1,14 @@
+@import url(./normalize.css);
+
 footer {
   background-color: #b57510;
   height: 40px;
   display: flex;
   justify-content: flex-end;
   margin-top: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 footer address {

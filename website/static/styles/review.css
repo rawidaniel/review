@@ -1,3 +1,5 @@
+@import url(./normalize.css);
+
 main {
   font-family: "Kanit", sans-serif;
 }
@@ -33,6 +35,7 @@ main .restaurant .img-restr {
   margin-left: 40px;
   border-radius: 18px;
   margin-top: 20px;
+  box-shadow: 0 0 15px 3px #555;
 }
 
 .star-rate i {
@@ -214,6 +217,17 @@ main .restaurant .img-restr {
 .alert-danger,
 .alert-success {
   box-shadow: black 2px 2px 5px 2px;
+}
+
+#danger-btn {
+  background: linear-gradient(red, rgb(120, 3, 3), red);
+  color: #fff;
+  border-radius: 5px;
+}
+
+#danger-btn:hover {
+  background: linear-gradient(rgb(120, 3, 3), red, rgb(120, 3, 3));
+  box-shadow: 0 0 3rem 1rem #f44;
 }
 
 @keyframes comment {

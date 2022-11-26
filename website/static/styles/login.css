@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   background: #ffaa33;
   height: 100vh;
   overflow: hidden;
@@ -14,7 +14,7 @@ body {
   width: 400px;
   background: #fffffa;
   border-radius: 30px;
-  color: #ffaa33;
+  color: #d2691e;
 }
 .center h1 {
   text-align: center;
@@ -54,7 +54,7 @@ label:hover {
   width: 300px;
 }
 .txt_field span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 40px;
   left: 0;
@@ -72,8 +72,8 @@ label:hover {
   width: 100%;
 }
 .signup_link {
-  font-weight: 700;
-  margin: 15px 0;
+  font-weight: 900;
+  margin: 30px 0;
   text-align: center;
   font-size: 16px;
   outline: none;
@@ -82,9 +82,9 @@ label:hover {
   font-weight: 700;
   font-size: 15px;
   font-family: sans-serif;
-  color: #ffaa33;
+  color: #ff4500;
 }
-input[type='submit'] {
+input[type="submit"] {
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -102,9 +102,4 @@ input[type='submit'] {
 }
 .pass:hover {
   text-decoration: underline;
-}
-
-.checkbox_field {
-  text-align: center;
-  accent-color: #ffaa33;
 }

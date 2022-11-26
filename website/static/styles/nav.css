@@ -1,14 +1,16 @@
+@import url(./normalize.css);
+
 :root {
   --color-primary: #f79205;
   --color-secondary: #c6851d;
   --font-size-large: 1.5rem;
   --font-size-medium: 1rem;
   --line-height: 2.5rem;
-  --font-family: 'Kanit', sans-serif;
+  --font-family: "Kanit", sans-serif;
 }
 
 .logo {
-  background: url(../images/icon.png);
+  background: url(../images/webp/logo.webp);
   background-size: 100%;
   border-radius: 50%;
 
@@ -44,7 +46,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 5;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 nav ul {

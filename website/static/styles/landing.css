@@ -1,6 +1,8 @@
+@import url(./normalize.css);
+
 main #sceine-one {
   /*background-color: #003333;*/
-  background: url(../images/biruk-gashawbeza-Fq-5Sd64p0Q-unsplash.jpg);
+  background: url(../images/webp/pudding.webp);
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -14,7 +16,7 @@ main #sceine-two {
 }
 
 main #sceine-three {
-  background: url(../images/patrick-tomasso-fMntI8HAAB8-unsplash.jpg);
+  background: url(../images/webp/client.webp);
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
@@ -52,7 +54,7 @@ main {
   left: -1px;
   right: 0;
   bottom: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 html {
@@ -232,6 +234,7 @@ text {
 #sceine-four img {
   width: auto;
   height: 90%;
+  border-radius: 20px;
 }
 
 #sceine-four .img-cnt {

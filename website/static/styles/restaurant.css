@@ -1,3 +1,5 @@
+@import url(./normalize.css);
+
 #off-can-triger {
   visibility: hidden;
   height: 0;
@@ -30,3 +32,14 @@
   border: 2px solid rgb(192, 132, 19);
  }
  */
+
+#ser-loading {
+  position: relative;
+  margin: 3rem;
+  padding-top: 1rem;
+}
+
+#ser-loading .spinner-grow {
+  position: absolute;
+  background-color: rgb(255, 201, 102);
+}
