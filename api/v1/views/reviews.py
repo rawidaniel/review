@@ -8,6 +8,12 @@ from api.v1.views import all_views
 from models.review import Review
 
 
+@all_views.route("/reviews", methods=['GET'], strict_slashes= False)
+def get_all_reviews():
+    """Reterive all reviews object"""
+    reviews =[review.to_dict() for review in storage.all('Review').values()]
+    return jsonify(reviews), 200
+
 
 @all_views.route('/foods/<food_id>/reviews', methods=['GET'],
                  strict_slashes=False)
