@@ -16,6 +16,20 @@ main .restaurants h2 {
   font-weight: bold;
 }
 
+a[href="/logout"] {
+  background-color: red;
+  color: white;
+  display: inline-block;
+  height: auto;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+a[href="/logout"] span .fa-power-off {
+  color: white !important;
+  margin-right: 1rem;
+}
+
 main .restaurants .restaurant .restr-descr {
   display: flex;
   justify-content: space-between;

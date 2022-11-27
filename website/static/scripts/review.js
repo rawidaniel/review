@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+    let postRight = true;
     let userId = $("input[type='hidden']").attr("data-user-id")
     let foodId = $("input[type='hidden']").attr("data-food-id")
     console.log(userId, foodId)
@@ -19,6 +20,7 @@ $(document).ready(() => {
         $("body").empty().text("FAILED TO LOAD THE DATA ! :(  ... RELOAD MANUALLY").css("color", "red")
         console.log("404 Status code!!! Reload Manually")
         $("body").css("opacity", "1")
+        postRight = false
     } else {
         return response.json()
     }
@@ -50,9 +52,11 @@ $(document).ready(() => {
         $(".btn-outline-success").text("Edit");
         $(".btn-outline-danger").text("Delete");
         $(".btn-outline-primary").prop("disabled", true)
+        postRight = false;
         $(".btn-outline-primary").css("visibility", "hidden").css("height", "0").css("width", "0").css("padding", "0").css("margin", "0")
         $("#input").css("visibility", "hidden").css("height", "0").css("width", "0").css("padding", "0").css("margin", "0")
       } else {
+        postRight = true;
         $(".btn-outline-primary").css("visibility", "hidden").css("height", "0").css("width", "0").css("padding", "0").css("margin", "0")
         $("#input").css("visibility", "hidden").css("height", "0").css("width", "0").css("padding", "0").css("margin", "0")
         $(".usr-comment").css("visibility", "hidden").css("height", "0").css("width", "0").css("padding", "0").css("margin", "0")
@@ -67,6 +71,7 @@ $(document).ready(() => {
     $("body").empty().text("FAILED TO LOAD THE DATA ! :(  ... RELOAD MANUALLY").css("color", "red")
     console.log("error caught!!! Reload Manually")
     $("body").css("opacity", "1")
+    postRight = false;
    });
 
 
@@ -112,6 +117,7 @@ $(document).ready(() => {
                     $(".btn-outline-success").text("Edit");
                     $(".btn-outline-danger").text("Delete");
                     $(".btn-outline-primary").prop("disabled", true)
+                    postRight = false;
                     $("#alert-user").empty().html('<div class="alert alert-success" \
                     role="alert">You reviewed this food successfully!</div>')
                     $("#loading-cmt").empty()
@@ -152,6 +158,7 @@ $(document).ready(() => {
                     $(".btn-outline-success").text("Edit");
                     $(".btn-outline-danger").text("Delete");
                     $(".btn-outline-primary").prop("disabled", true)
+                    postRight = false;
                     $("#alert-user").empty().html('<div class="alert alert-success" \
                     role="alert">You reviewed this food successfully!</div>')
                     $("#loading-cmt").empty()
@@ -179,6 +186,7 @@ $(document).ready(() => {
 
         $("#input").val(textVal)
         $(".btn-outline-primary").prop("disabled", false)
+        postRight = true
         $(".btn-outline-primary").css("visibility", "visible").css("height", "auto").css("width", "auto").css("padding", "10px").css("margin", "10px")
         $("#input").css("visibility", "visible").css("height", "100px").css("width", "80%").css("padding", "auto").css("margin", "25px auto")
         $('input').focus();
@@ -211,6 +219,7 @@ $(document).ready(() => {
                 $("#edit").text("")
                 $("#delete").text("")
                 $(".btn-outline-primary").prop("disabled", false)
+                postRight = true;
                 $("#alert-user").empty().html('<div class="alert alert-danger"\
                  role="alert">Your review is deleted !</div>')
                  $("#loading-dlt").empty()
@@ -275,7 +284,9 @@ $('.btn-link').click(function(){
  $('#input').keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
-        $(".btn-outline-primary").click();  
+        if (postRight) {
+            $(".btn-outline-primary").click(); 
+        } 
     }
     //Stop the event from propogation to other handlers
     event.stopPropagation();
