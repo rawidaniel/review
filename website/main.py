@@ -10,6 +10,10 @@ main = Blueprint("main", __name__)
 
 def averageRate(rate):
     """Retervie the total rate of food review"""
+    '''
+    if len(rate) == 0:
+        return 0
+    '''
     total = 0
     for num in rate:
         total += num
