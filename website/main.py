@@ -44,6 +44,31 @@ def foods():
                            restaurant_name=restaurant.name, restaurant_id=restaurant.id,
                            user_name=current_user.first_name, food_rate=4.6)
 
+'''
+
+@main.route("/foods")
+def foods():
+    """Reterive foods pages"""
+    restaurant_id = request.args.get("restaurant_id")
+    restaurant = storage.get("Restaurant", restaurant_id)
+    foods = restaurant.foods
+
+    # I changed starting from this
+    food_id_list = [food.id for food in foods]
+    food_rate_list = []
+    for food_id in food_id_list:
+        food_item = storage.get("Food", food_id)
+        reviews = food_item.reviews
+        foodRate = [val.rate for val in reviews]
+        food_rate_list.append(averageRate(foodRate))
+    # ending to this
+    
+    # food_image = "https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg"
+    return render_template("food.html", food_rate_list=food_rate_list, foods=foods, user_id=current_user.id,
+                           restaurant_name=restaurant.name, restaurant_id=restaurant.id,
+                           user_name=current_user.first_name)
+'''
+
 @main.route('/reviews')
 def reviews():
     """Reterive reviews page"""
