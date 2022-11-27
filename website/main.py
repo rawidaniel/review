@@ -18,7 +18,7 @@ def averageRate(rate):
 @main.route("/")
 def landing():
     """Reterive langing page"""
-    return render_template("landing.html")
+    return render_template("landing.html", user=current_user)
 
 @main.route('/restaurants')
 @login_required

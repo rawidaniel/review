@@ -59,6 +59,7 @@
               <li>Contact</li>
             </a>
           </div>
+          {% if not current_user.is_authenticated %}
           <div class="navbar">
             <a href="/signup" class="nav-link nav-link-fade-up">
               <li>Signup</li>
@@ -69,6 +70,18 @@
               <li>Login</li>
             </a>
           </div>
+          {% endif%} {% if current_user.is_authenticated %}
+          <div class="navbar">
+            <a href="/restaurants" class="nav-link nav-link-fade-up">
+              <li>Restaurant</li>
+            </a>
+          </div>
+          <div class="navbar">
+            <a href="/logout" class="nav-link nav-link-fade-up">
+              <li>Logout</li>
+            </a>
+          </div>
+          {% endif%}
         </ul>
       </nav>
     </header>

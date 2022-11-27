@@ -13,6 +13,8 @@ auth = Blueprint('auth', __name__)
 @auth.route("/login")
 def login():
     """Reterive login page"""
+    if current_user.is_authenticated:
+        return redirect(url_for("main.restaurants"))
     return render_template("login.html")
 
 @auth.route("/login",methods=["POST"])
@@ -34,6 +36,8 @@ def login_post():
 @auth.route("/signup")
 def signup():
     """Reterive signup page"""
+    if current_user.is_authenticated:
+        return redirect(url_for("main.restaurants"))
     return render_template("signup.html")
 
 @auth.route("/signup", methods=["POST"])
