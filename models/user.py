@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash
 
+
 class User(BaseModel, Base, UserMixin):
     """The User class"""
     __tablename__ = 'users'
@@ -15,12 +16,12 @@ class User(BaseModel, Base, UserMixin):
     password = Column(String(120), nullable=False)
     is_admin = Column(Boolean, default=False)
     reviews = relationship('Review', backref='user',
-                          cascade='all, delete, delete-orphan')
+                           cascade='all, delete, delete-orphan')
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
         super().__init__(*args, **kwargs)
-    
+
     def __setattr__(self, name, value):
         """sets a password with sha256 enryption"""
         if name == "password":

@@ -65,7 +65,7 @@ class DBStorage:
     def save(self):
         """
             Commit all changes of current database session
-        """ 
+        """
         self.__session.commit()
 
     def delete(self, obj=None):
@@ -97,16 +97,17 @@ class DBStorage:
         """
         user = self.__session.query(User).get(id)
         return user
-    
+
     def session(self):
         """
             Reterive the session
         """
         return self.__session
+
     def close(self):
         """
             Remove private session attribute
-        """ 
+        """
         self.__session.close()
 
     def get(self, cls, id):

@@ -11,7 +11,7 @@ from models.database import db_storage
 
 storage = db_storage.DBStorage()
 
-classes = {"BaseModel": BaseModel,"User": User,
+classes = {"BaseModel": BaseModel, "User": User,
            "Food": Food, "Restaurant": Restaurant,
            "Review": Review}
 
