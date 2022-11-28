@@ -2,7 +2,8 @@
 """
 Initalize flask application for website
 """
-from flask import Flask, request, jsonify, redirect, url_for, flash, render_template
+from flask import Flask, request, jsonify, redirect, url_for,\
+flash, render_template
 from flask_login import LoginManager, current_user
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
