@@ -10,6 +10,7 @@ from models.user import User
 
 auth = Blueprint('auth', __name__)
 
+
 @auth.route("/login")
 def login():
     """Reterive login page"""
@@ -17,7 +18,8 @@ def login():
         return redirect(url_for("main.restaurants"))
     return render_template("login.html")
 
-@auth.route("/login",methods=["POST"])
+
+@auth.route("/login", methods=["POST"])
 def login_post():
     """check the existing of user and route to restaurant or admin page"""
     email = request.form.get("email")
@@ -29,9 +31,10 @@ def login_post():
         flash("Please provide correct credential details and try again.")
         return redirect(url_for("auth.login"))
     login_user(user, remember=remember)
-    if current_user.is_admin == True:
+    if current_user.is_admin is True:
         return redirect(url_for("admin.index"))
     return redirect(url_for("main.restaurants"))
+
 
 @auth.route("/signup")
 def signup():
@@ -39,6 +42,7 @@ def signup():
     if current_user.is_authenticated:
         return redirect(url_for("main.restaurants"))
     return render_template("signup.html")
+
 
 @auth.route("/signup", methods=["POST"])
 def signup_post():
@@ -57,9 +61,10 @@ def signup_post():
         flash("password don\'t match")
         return redirect(url_for("auth.signup"))
     user = User(email=email, first_name=firstname, last_name=lastname,
-                password= password)
+                password=password)
     user.save()
     return redirect(url_for("auth.login"))
+
 
 @auth.route("/logout")
 @login_required
