@@ -7,6 +7,7 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash
 
 class User(BaseModel, Base, UserMixin):
+    """The User class"""
     __tablename__ = 'users'
     first_name = Column(String(120), nullable=False)
     last_name = Column(String(120), nullable=False)
@@ -25,5 +26,7 @@ class User(BaseModel, Base, UserMixin):
         if name == "password":
             value = generate_password_hash(value, method='sha256')
         super().__setattr__(name, value)
+
     def __str__(self):
+        """String representation of the User class"""
         return "{} {}".format(self.first_name, self.last_name)

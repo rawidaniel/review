@@ -3,6 +3,7 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey, Float
 class Review(BaseModel, Base):
+    """The Review class"""
     __tablename__ = 'reviews'
     text = Column(String(1024), nullable=True)
     rate = Column(Float, nullable=False)
@@ -14,4 +15,5 @@ class Review(BaseModel, Base):
         super().__init__(*args, **kwargs)
 
     def __str__(self):
+        """String representation of the Review class"""
         return "(*{}) {}".format(self.rate, self.text)

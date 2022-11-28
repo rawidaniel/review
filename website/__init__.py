@@ -10,7 +10,6 @@ import os
 from werkzeug.utils import secure_filename
 
 
-
 def create_app():
     """Create Flask instance"""
     app = Flask(__name__)
@@ -21,7 +20,6 @@ def create_app():
  
     ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
-   
 
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
@@ -52,7 +50,6 @@ def create_app():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                #print('upload_image filename: ' + filename)
                 flash('Image successfully uploaded and displayed below')
                 return render_template('uploadphoto.html', filename=filename)
             else:

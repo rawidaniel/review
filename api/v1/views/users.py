@@ -43,11 +43,11 @@ def create_user():
         return jsonify({"error": "Missing last name"}), 400
     elif 'password' not in data:
         return jsonify({"error": "Missing password"}), 400
-    # if data.get('password_confirm') and data.get('password') != data.get("password_confirm"):
-    #     return jsonify({"error": "Missmatching password"}), 400
-    # else:
-    #     return jsonify({"error": "Missing password confirmation"}), 400
-
+    elif 'email' not in data:
+        return jsonify({"error": "Missing email"}), 400
+    user_check = storage.get_user_by_email(data.get("email"))
+    if user_check:
+        return jsonify({"error": "email exists"}), 400
     user = User(**data)
     user.save()
     return jsonify(user.to_dict()), 201

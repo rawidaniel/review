@@ -15,10 +15,12 @@ def generate_uuid():
     return str(uuid.uuid4())
 
 class BaseModel:
+    """The BaseModel class from which future classes will be derived"""
     id = Column(String(75), nullable=False, primary_key=True, default=generate_uuid)
     created_on = Column(DateTime, default=dt.utcnow, nullable=False)
     updated_on = Column(DateTime, default=dt.utcnow, nullable=False)
     def __init__(self, *args, **kwargs):
+        """Initialization of the base model"""
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
@@ -39,9 +41,10 @@ class BaseModel:
             self.updated_on = dt.now()
 
     def save(self):
-      self.updated_on = dt.now()
-      models.storage.new(self)
-      models.storage.save()
+        """save object"""
+        self.updated_on = dt.now()
+        models.storage.new(self)
+        models.storage.save()
     
     def delete(self):
         """Delete object"""
@@ -49,6 +52,7 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
+        """returns a dictionary containing all keys/values of the instance"""
         new_dict = {}
         new_dict["__class__"] = self.__class__.__name__
         for key, val in self.__dict__.items():
@@ -63,4 +67,5 @@ class BaseModel:
         return new_dict
 
     def __str__(self):
-      return '[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__)
+        """String representation of the BaseModel class"""
+        return '[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__)

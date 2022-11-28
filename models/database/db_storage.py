@@ -28,11 +28,8 @@ class DBStorage:
         pwd = getenv("HBNB_MYSQL_PWD", "addisreview")
         host = getenv("HBNB_MYSQL_HOST", "localhost")
         db = getenv("HBNB_MYSQL_DB", "hbnb_addis_review_db")
-        envv = getenv("HBNB_ENV", "none")
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(
             user, pwd, host, db), pool_pre_ping=True)
-        if envv == 'test':
-            Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
         """

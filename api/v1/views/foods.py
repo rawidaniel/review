@@ -48,6 +48,7 @@ def create_food():
       food = Food(**data)
       food.save()
       return jsonify(food.to_dict()), 201
+
 @all_views.route("/foods/<food_id>", methods=["PUT"], strict_slashes=False)
 def update_food(food_id):
     """Update a food object based on provided user id"""
