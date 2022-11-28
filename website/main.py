@@ -8,6 +8,7 @@ from models import storage
 
 main = Blueprint("main", __name__)
 
+
 def averageRate(rate):
     """Retervie the total rate of food review"""
     total = 0
@@ -15,19 +16,22 @@ def averageRate(rate):
         total += num
     return round(total / len(rate) if len(rate) > 0 else 0, 1)
 
+
 @main.route("/")
 def landing():
     """Reterive langing page"""
     return render_template("landing.html", user=current_user)
+
 
 @main.route('/restaurants')
 @login_required
 def restaurants():
     """Reterive restaurant page"""
     restaurants = storage.all('Restaurant').values()
-    return render_template("restaurant.html", restaurants= restaurants, 
-                           user_id=current_user.id, user_name=current_user.first_name,
-                           user_is_admin= current_user.is_admin)
+    return render_template("restaurant.html", restaurants=restaurants,
+                           user_id=current_user.id,
+                           user_name=current_user.first_name,
+                           user_is_admin=current_user.is_admin)
 
 
 @main.route("/foods")
@@ -44,8 +48,10 @@ def foods():
         reviews = food_item.reviews
         foodRate = [val.rate for val in reviews]
         food_rate_list.append(averageRate(foodRate))
-    return render_template("food.html", food_rate_list=food_rate_list, foods=foods, user_id=current_user.id,
-                           restaurant_name=restaurant.name, restaurant_id=restaurant.id,
+    return render_template("food.html", food_rate_list=food_rate_list,
+                           foods=foods, user_id=current_user.id,
+                           restaurant_name=restaurant.name,
+                           restaurant_id=restaurant.id,
                            user_name=current_user.first_name)
 
 
@@ -59,7 +65,9 @@ def reviews():
     reviews = food.reviews
     foodRate = [val.rate for val in reviews]
     food_rate = averageRate(foodRate)
-    restaurant_contact="+251 93939483"   
-    return render_template("review.html", restaurant=restaurant, food_rate=food_rate, food=food,
-                           user_id=current_user.id, user_name=current_user.first_name,
+    restaurant_contact = "+251 93939483"
+    return render_template("review.html", restaurant=restaurant,
+                           food_rate=food_rate, food=food,
+                           user_id=current_user.id,
+                           user_name=current_user.first_name,
                            reviews=reviews)
