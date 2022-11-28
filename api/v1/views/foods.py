@@ -7,19 +7,22 @@ from api.v1.views import all_views
 from flask import jsonify, abort, request
 from models.food import Food
 
+
 @all_views.route("/foods", methods=["GET"], strict_slashes=False)
 def get_food():
     """Reterive all foods object"""
     foods = [obj.to_dict() for obj in storage.all("Food").values()]
     return jsonify(foods), 200
 
-@all_views.route("/foods/<food_id>", methods=['GET'], strict_slashes= False)
+
+@all_views.route("/foods/<food_id>", methods=['GET'], strict_slashes=False)
 def get_food_by_id(food_id):
     """Reterive a food object based on provided food_id"""
     food = storage.get("Food", food_id)
     if food is None:
         abort(404)
     return jsonify(food.to_dict()), 200
+
 
 @all_views.route("/foods/<food_id>", methods=["DELETE"], strict_slashes=False)
 def delete_food(food_id):
@@ -29,6 +32,7 @@ def delete_food(food_id):
         abort(404)
     food.delete()
     return jsonify({}), 200
+
 
 @all_views.route("foods", methods=["POST"], strict_slashes=False)
 def create_food():
@@ -45,9 +49,10 @@ def create_food():
     elif 'description' not in data:
         return jsonify({"error": "Missing description"}), 400
     else:
-      food = Food(**data)
-      food.save()
-      return jsonify(food.to_dict()), 201
+        food = Food(**data)
+        food.save()
+        return jsonify(food.to_dict()), 201
+
 
 @all_views.route("/foods/<food_id>", methods=["PUT"], strict_slashes=False)
 def update_food(food_id):
@@ -60,7 +65,7 @@ def update_food(food_id):
         abort(404)
     ignore = ('id', 'created_on', 'updated_on')
     for key in data.keys():
-      if key not in ignore:
-        setattr(food, key, data[key])
+        if key not in ignore:
+            setattr(food, key, data[key])
     food.save()
     return jsonify(food.to_dict()), 200

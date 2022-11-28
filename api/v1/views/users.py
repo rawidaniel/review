@@ -8,19 +8,21 @@ from models import storage
 from models.user import User
 
 
-@all_views.route("/users", methods=['GET'], strict_slashes= False)
+@all_views.route("/users", methods=['GET'], strict_slashes=False)
 def get_users():
     """Reterive all users object"""
-    users =[user.to_dict() for user in storage.all('User').values()]
+    users = [user.to_dict() for user in storage.all('User').values()]
     return jsonify(users), 200
 
-@all_views.route("/users/<user_id>", methods=['GET'], strict_slashes= False)
+
+@all_views.route("/users/<user_id>", methods=['GET'], strict_slashes=False)
 def get_user_by_id(user_id):
     """Reterive a user object based on provided user_id"""
     user = storage.get("User", user_id)
     if user is None:
         abort(404)
     return jsonify(user.to_dict()), 200
+
 
 @all_views.route("/users/<user_id>", methods=["DELETE"], strict_slashes=False)
 def delete_user(user_id):
@@ -30,6 +32,7 @@ def delete_user(user_id):
         abort(404)
     user.delete()
     return jsonify({}), 200
+
 
 @all_views.route("/users", methods=["POST"], strict_slashes=False)
 def create_user():
@@ -52,6 +55,7 @@ def create_user():
     user.save()
     return jsonify(user.to_dict()), 201
 
+
 @all_views.route("/users/<user_id>", methods=["PUT"], strict_slashes=False)
 def update_user(user_id):
     """Update a user object based on provided user id"""
@@ -63,7 +67,7 @@ def update_user(user_id):
         abort(404)
     ignore = ('id', 'email', 'created_on', 'updated_on')
     for key in data.keys():
-      if key not in ignore:
-        setattr(user, key, data[key])
+        if key not in ignore:
+            setattr(user, key, data[key])
     user.save()
     return jsonify(user.to_dict()), 200
