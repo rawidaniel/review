@@ -16,7 +16,7 @@
 
 .food-header .price-food {
   margin: 10px auto;
-  margin-right: 85px;
+  margin-right: 0;
   padding: 10px 10px;
   font-weight: bolder;
   font-size: larger;
