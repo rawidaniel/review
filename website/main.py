@@ -77,10 +77,11 @@ def reviews():
     reviews = food.reviews
     foodRate = [val.rate for val in reviews]
     food_rate = averageRate(foodRate)
-    rate_count = rate_counter(foodRate)
+    rate_list = rate_counter(foodRate)
+    rate_count = len(foodRate)
     restaurant_contact = "+251 93939483"
     return render_template("review.html", restaurant=restaurant,
                            food_rate=food_rate, food=food,
-                           user_id=current_user.id, rate_count=rate_count,
+                           user_id=current_user.id, rate_list=rate_list, rate_count=rate_count, 
                            user_name=current_user.first_name,
                            reviews=reviews)
