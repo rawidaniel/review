@@ -9,6 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 ENV ADDIS_STORAGE=db ADDIS_USER=addis_user ADDIS_PWD=addis_pwd
-EXPOSE 5001
+EXPOSE 5001:5001
 
 CMD [ "python", "flask run" ]
