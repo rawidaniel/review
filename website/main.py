@@ -10,6 +10,7 @@ main = Blueprint("main", __name__)
 
 
 def rate_counter(rates):
+    """Reterive dictionary of rate and their corresponding value"""
     count_dict = {}
     for i in range(5):
         count_dict[i + 1] = 0
