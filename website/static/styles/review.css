@@ -1,6 +1,6 @@
 @import url(./normalize.css);
 main {
-  font-family: "Kanit", sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 main h1 {
@@ -15,8 +15,7 @@ main .restaurants h2 {
   font-weight: bold;
 }
 
-
-a[href="/logout"] span .fa-power-off {
+a[href='/logout'] span .fa-power-off {
   color: white !important;
   margin-right: 1rem;
 }
@@ -94,7 +93,6 @@ main .restaurant .img-restr {
   margin-left: 60px;
   margin-top: 20px;
 }
-
 
 .price-food {
   z-index: 2;
@@ -186,7 +184,6 @@ main .restaurant .img-restr {
   }
 }
 
-
 /* For rating Card */
 .rating-card {
   background: orange;
@@ -201,7 +198,6 @@ main .restaurant .img-restr {
   letter-spacing: 1px;
   font-weight: 500;
   margin: auto;
-
 }
 
 .rating-card h3 {
@@ -214,27 +210,20 @@ main .restaurant .img-restr {
   font-size: 1.5rem;
 }
 
-.rating-card h3, .rating-card p {
+.rating-card h3,
+.rating-card p {
   color: white;
 }
 
+#danger-btn {
+  background-color: darkred;
+  color: whitesmoke;
+  border-radius: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#danger-btn:hover {
+  box-shadow: 0 0 5px 15px red;
+}
 
 /* For rating Graph */
 .rating-graph {
@@ -244,10 +233,10 @@ main .restaurant .img-restr {
 
 .rating-graph {
   display: grid;
-  grid-template-columns: .5fr 90% .5fr;
+  grid-template-columns: 0.5fr 90% 0.5fr;
   grid-template-rows: repeat(5, auto);
   column-gap: 1.5rem;
-  row-gap: .2rem;
+  row-gap: 0.2rem;
 }
 
 .grph-img {
@@ -255,21 +244,18 @@ main .restaurant .img-restr {
   height: 15px;
   background: rgba(211, 211, 211, 0.856);
   border-radius: 10px;
-  margin-top: .2rem;
+  margin-top: 0.2rem;
 }
 
 .grph-fill {
   height: 100%;
   background-color: rgba(255, 166, 0, 0.89);
   border-radius: 20px;
-
 }
 
 .grph-txt {
   font-weight: bold;
 }
-
-
 
 /* For the review overview*/
 
@@ -321,8 +307,8 @@ main .restaurant .img-restr {
   background-color: white;
   font-weight: bold;
   font-size: large;
-  margin: .5rem;
-  padding: .5rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   border-radius: 10px;
 }
 
@@ -333,7 +319,7 @@ main .restaurant .img-restr {
   display: inline-block;
   height: 4rem;
   width: 4rem;
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: center;
   margin-right: 2rem;
   letter-spacing: 1px;
@@ -351,7 +337,7 @@ main .restaurant .img-restr {
 }
 
 .user-name::after {
-  content: " -";
+  content: ' -';
 }
 
 .cmt-date {
@@ -372,11 +358,11 @@ main .restaurant .img-restr {
   color: rgb(107, 106, 106);
 }
 
-.love-cmt, .share-cmt {
+.love-cmt,
+.share-cmt {
   margin: auto 1.5rem;
 }
 
 .love-cmt + span {
   font-size: small;
 }
-

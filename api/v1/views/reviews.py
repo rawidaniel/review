@@ -58,7 +58,11 @@ def create_review(food_id):
     '''
         create new review obj through food association using POST
     '''
-    if storage.get("Food", food_id) is None:
+    user_id = request.get_json().get("user_id")
+    review_user_id = [review.user_id for review in storage.all('Review').values()]
+    if user_id in review_user_id:
+        abort(404)
+    elif storage.get("Food", food_id) is None:
         abort(404)
     elif not request.get_json():
         return jsonify({"error": "Not a JSON"}), 400
