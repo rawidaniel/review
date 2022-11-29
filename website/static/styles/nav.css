@@ -133,7 +133,8 @@ nav .user-ctl a {
 
 a[href="/logout"] {
   background-color: transparent;
-  color: white;
+  color: white !important;
+  font-weight: 400 !important;
   display: inline-block;
   height: auto;
   border-radius: 5px;
