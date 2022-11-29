@@ -109,8 +109,8 @@
                 alt="Restaurant Image"
               />
               <span class="price-food"
-                ><sup><i class="fa-sharp fa-regular fa-dollar-sign"></i></sup> &nbsp;
-                {{food.price}}</span
+                ><sup><i class="fa-sharp fa-regular fa-dollar-sign"></i></sup>
+                &nbsp; {{food.price}}</span
               >
               <div class="star-rate-noedit">
                 <i class="fa-regular fa-star" id="1"></i>
@@ -150,8 +150,7 @@
           </div>
           <div class="hr-line"></div>
         </section>
-        
-        
+
         <!--Overview of the rating -->
         <div class="review-overview">
           <div class="rating-card">
@@ -162,30 +161,45 @@
             <div class="rating-graph">
               <div class="grph-txt">Excellent</div>
               <div class="grph-img">
-                <div class="grph-fill" style="width: {{ (rate_list[5] / rate_count) * 100 }}%"></div>
+                <div
+                  class="grph-fill"
+                  style="width: {{ (rate_list[5] / rate_count) * 100 }}%"
+                ></div>
               </div>
               <div class="grph-score">{{ rate_list[5] }}</div>
 
               <div class="grph-txt">Good</div>
               <div class="grph-img">
-                <div class="grph-fill" style="width: {{ (rate_list[4] / rate_count) * 100 }}%"></div>
+                <div
+                  class="grph-fill"
+                  style="width: {{ (rate_list[4] / rate_count) * 100 }}%"
+                ></div>
               </div>
               <div class="grph-score">{{ rate_list[4] }}</div>
 
               <div class="grph-txt">Average</div>
               <div class="grph-img">
-                <div class="grph-fill" style="width: {{ (rate_list[3] / rate_count) * 100 }}%"></div>
+                <div
+                  class="grph-fill"
+                  style="width: {{ (rate_list[3] / rate_count) * 100 }}%"
+                ></div>
               </div>
               <div class="grph-score">{{ rate_list[3] }}</div>
 
               <div class="grph-txt">Poor</div>
               <div class="grph-img">
-                <div class="grph-fill" style="width: {{ (rate_list[2] / rate_count) * 100 }}%"></div>
+                <div
+                  class="grph-fill"
+                  style="width: {{ (rate_list[2] / rate_count) * 100 }}%"
+                ></div>
               </div>
               <div class="grph-score">{{ rate_list[2] }}</div>
               <div class="grph-txt">Terrible</div>
               <div class="grph-img">
-                <div class="grph-fill" style="width: {{ (rate_list[1] / rate_count) * 100 }}%"></div>
+                <div
+                  class="grph-fill"
+                  style="width: {{ (rate_list[1] / rate_count) * 100 }}%"
+                ></div>
               </div>
               <div class="grph-score">{{ rate_list[1] }}</div>
             </div>
@@ -220,24 +234,24 @@
           </button>
           <span id="loading-cmt"></span>
           <!-- Hover effect data-toggle="tooltip" title="Hooray!"-->
-        <div class="usr-comment">
-          <span id="cmt-hd">Your comment: &nbsp;</span>
-          <span class="this-usr-comment"></span>
-          <button
-            type="button"
-            class="btn btn-outline-success"
-            id="edit"
-          ></button>
-          <button
-            type="button"
-            class="btn btn-outline-danger"
-            id="delete"
-          ></button>
-          <button type="button" id="danger-btn">
-            <i class="fa-solid fa-triangle-exclamation"></i>RESET ALL
-          </button>
-          <span id="loading-dlt"></span>
-        </div>
+          <div class="usr-comment">
+            <span id="cmt-hd">Your comment: &nbsp;</span>
+            <span class="this-usr-comment"></span>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              id="edit"
+            ></button>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              id="delete"
+            ></button>
+            <button type="button" id="danger-btn">
+              <i class="fa-solid fa-triangle-exclamation"></i>RESET ALL
+            </button>
+            <span id="loading-dlt"></span>
+          </div>
         </section>
 
         <section class="read-comment">
@@ -250,19 +264,22 @@
               <div class="user-comment-read comment-writer">
                 <div>
                   <div class="user-info">
-                    <div class="user-profile-pic">{{review.user.first_name[:1].upper}}</div>
+                    <div class="user-profile-pic">
+                      {{review.user.first_name[:1].upper()}}
+                    </div>
                     <span class="user-name">{{review.user.first_name}}</span>
                     <span class="cmt-date">12 sep</span>
                   </div>
                   <div class="options">
-                    <span><i class="fa-solid fa-shield-heart"></i> {{review.rate}}</span>
+                    <span
+                      ><i class="fa-solid fa-shield-heart"></i>
+                      {{review.rate}}</span
+                    >
                     <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
                   </div>
                 </div>
                 <div class="user-comment-txt">
-                  <p>
-                    {{review.text}}
-                  </p>
+                  <p>{{review.text}}</p>
                 </div>
                 <hr />
                 <div class="user-ux">
