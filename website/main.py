@@ -16,6 +16,9 @@ def rate_counter(rates):
     
     for rate in rates:
         rate = int(rate)
+
+        if rate == 0:
+            continue
         count_dict[rate] += 1
         
     return count_dict
