@@ -135,39 +135,109 @@ main .restaurant .img-restr {
   max-width: 70%;
   padding: 10px;
 }
-
-.usr-comment #cmt-hd {
-  font-weight: 600;
+main {
+  font-family: "Kanit", sans-serif;
 }
 
-.usr-comment .this-usr-comment {
-  background-color: rgb(253, 247, 155);
-  padding: 3px 5px;
-  border-radius: 9px;
+main h1 {
+  font-size: larger;
+  font-weight: bolder;
+  padding-left: 10px;
+  position: relative;
+}
+main .restaurants h2 {
+  font-size: large;
+  padding-left: 30px;
+  font-weight: bold;
 }
 
-.comment-writer {
-  margin-left: 50px;
-  display: grid;
-  grid-template-columns: 15% 10% 1fr;
-  box-shadow: 5px 5px 10px 5px gray;
-  margin: 5px auto;
-  padding-bottom: 25px;
-  padding-left: 5px;
+a[href="/logout"] {
+  background-color: red;
+  color: white;
+  display: inline-block;
+  height: auto;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+a[href="/logout"] span .fa-power-off {
+  color: white !important;
+  margin-right: 1rem;
+}
+
+main .restaurants .restaurant .restr-descr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .restaurant .description {
+  font-size: medium;
+  padding-right: 40px;
+  text-align: justify;
   width: auto;
 }
 
-.comment-writer .fa-shield-heart {
-  color: #e98e1f !important;
+main .restaurant .img-restr {
+  width: 500px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 18px;
+  margin-top: 20px;
 }
 
-.comment-writer .fa-comment {
-  color: rgb(46, 46, 226) !important;
+.star-rate i {
+  transition-duration: 0.3s;
 }
 
-.comment-writer .fa-user-tie {
-  color: rgb(52, 95, 3) !important;
+.star-rate .fa-star {
+  color: gray;
 }
+
+.star-rate .fa-star:hover {
+  transition: 0.3s;
+}
+
+.leave-comment input {
+  /*    animation-name: comment;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    padding: 0; 
+    margin: 0;
+    border: 0;
+    border-radius: 0 15px 15px 15px;
+    */
+  background-color: #fdf7eb;
+  border: 2px solid #f8d796;
+  border-radius: 5px;
+  box-shadow: gray 2px 2px 4px 3px;
+  height: 100px;
+  width: 80%;
+}
+
+.leave-comment {
+  margin-left: 40px;
+}
+
+.leave-comment input:focus {
+  border: 5px solid #ea9e07;
+}
+
+::placeholder {
+  padding-left: 40px;
+  color: black;
+}
+
+.btn-outline-primary {
+  visibility: hidden;
+}
+
+.star-rate {
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
 
 .price-food {
   z-index: 2;
@@ -233,17 +303,6 @@ main .restaurant .img-restr {
   box-shadow: black 2px 2px 5px 2px;
 }
 
-#danger-btn {
-  background: linear-gradient(red, rgb(120, 3, 3), red);
-  color: #fff;
-  border-radius: 5px;
-}
-
-#danger-btn:hover {
-  background: linear-gradient(rgb(120, 3, 3), red, rgb(120, 3, 3));
-  box-shadow: 0 0 3rem 1rem #f44;
-}
-
 @keyframes comment {
   1% {
     width: 0%;
@@ -270,3 +329,199 @@ main .restaurant .img-restr {
     padding-left: 40px;
   }
 }
+
+
+/* For rating Card */
+.rating-card {
+  background: orange;
+  height: 70%;
+  width: 15%;
+  margin-right: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-top: 1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: auto;
+
+}
+
+.rating-card h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 4rem;
+}
+
+.rating-card p {
+  font-size: 1.5rem;
+}
+
+.rating-card h3, .rating-card p {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For rating Graph */
+.rating-graph {
+  width: 70%;
+  padding-top: 1rem;
+}
+
+.rating-graph {
+  display: grid;
+  grid-template-columns: .5fr 90% .5fr;
+  grid-template-rows: repeat(5, auto);
+  column-gap: 1.5rem;
+  row-gap: .2rem;
+}
+
+.grph-img {
+  width: auto;
+  height: 15px;
+  background: rgba(211, 211, 211, 0.856);
+  border-radius: 10px;
+  margin-top: .2rem;
+}
+
+.grph-fill {
+  height: 100%;
+  background-color: rgba(255, 166, 0, 0.89);
+  border-radius: 20px;
+
+}
+
+.grph-txt {
+  font-weight: bold;
+}
+
+
+
+/* For the review overview*/
+
+.review-overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 3rem auto;
+  box-shadow: 0 0 15px 5px lightgray;
+  height: 25rem;
+}
+
+.review-overview section {
+  width: 70%;
+}
+
+/*commenting se3ction */
+
+.user-comment-read {
+  box-shadow: 0 0 15px 5px lightgray;
+  padding: 1rem;
+  width: 60%;
+  margin: 3rem;
+}
+
+#read-cmt {
+  text-transform: uppercase;
+  margin: auto 6rem;
+  padding-top: 10rem;
+  display: inline-block;
+  font-weight: bold;
+  text-shadow: 0 0 15px 5px darkgray;
+}
+
+.usr-comment {
+  padding-left: 6rem;
+}
+
+.leave-comment {
+  background-color: rgba(228, 228, 228, 0.541);
+  width: 90%;
+  border-radius: 50px;
+  padding: 2rem;
+}
+
+.this-usr-comment {
+  display: inline-block;
+  background-color: white;
+  font-weight: bold;
+  font-size: large;
+  margin: .5rem;
+  padding: .5rem;
+  border-radius: 10px;
+}
+
+.user-profile-pic {
+  background-color: darkred;
+  color: white;
+  border-radius: 25px;
+  display: inline-block;
+  height: 4rem;
+  width: 4rem;
+  padding: .5rem;
+  text-align: center;
+  margin-right: 2rem;
+  letter-spacing: 1px;
+}
+
+.options span {
+  margin: 1rem;
+}
+
+.options span:first-of-type {
+  color: goldenrod;
+}
+.user-name {
+  letter-spacing: 1px;
+}
+
+.user-name::after {
+  content: " -";
+}
+
+.cmt-date {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.user-comment-read > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-comment-read div p {
+  padding-left: 3rem;
+  line-height: 1.5;
+  overflow: auto;
+  color: rgb(107, 106, 106);
+}
+
+.love-cmt, .share-cmt {
+  margin: auto 1.5rem;
+}
+
+.love-cmt + span {
+  font-size: small;
+}
+
+
