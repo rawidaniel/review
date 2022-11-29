@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./website
+    ports:
+      - 5000:5000
+  backend:
+    build: ./api
+    ports:
+      - 5001:5001
+    environment: 
+      DB_URL: mysqldb://db/addis
+      ADDIS_STORAGE: db 
+      ADDIS_USER: addis_user 
+      ADDIS_PWD: addis_pwd
+  db:
+    image: mysql:8.0.31
+    ports: 
+      - 3306:3306
+    volumes:
+      - addis_storage:/data/db
