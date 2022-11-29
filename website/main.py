@@ -83,7 +83,8 @@ def reviews():
     food_rate = averageRate(foodRate)
     rate_list = rate_counter(foodRate)
     rate_count = len(foodRate)
-    restaurant_contact = "+251 93939483"
+    if rate_count == 0:
+        rate_count = 1
     return render_template("review.html", restaurant=restaurant,
                            food_rate=food_rate, food=food,
                            user_id=current_user.id, rate_list=rate_list, rate_count=rate_count, 
