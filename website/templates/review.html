@@ -72,7 +72,7 @@
               data-review-id=""
             />
             <i class="fa-regular fa-user"></i> &nbsp;
-            <span>{{user_name}} &nbsp; &nbsp;</span>
+            <span>{{user_name.capitalize()}} &nbsp; &nbsp;</span>
           </span>
           <a href="/logout"
             ><span><i class="fa-solid fa-power-off"></i>Log-out</span></a
@@ -267,7 +267,9 @@
                     <div class="user-profile-pic">
                       {{review.user.first_name[:1].upper()}}
                     </div>
-                    <span class="user-name">{{review.user.first_name}}</span>
+                    <span class="user-name"
+                      >{{review.user.first_name.capitalize()}}</span
+                    >
                     <span class="cmt-date"
                       >{{review.updated_on.strftime("%d")}}
                       {{review.updated_on.strftime("%b")}}</span
