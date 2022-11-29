@@ -13,7 +13,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route("/login")
 def login():
-    """Reterive login page"""
+`x`    """Reterive login page"""
     if current_user.is_authenticated:
         return redirect(url_for("main.restaurants"))
     return render_template("login.html")
@@ -31,7 +31,7 @@ def login_post():
         flash("Please provide correct credential details and try again.")
         return redirect(url_for("auth.login"))
     login_user(user, remember=remember)
-    if current_user.is_admin is True:
+    if current_user.is_admin:
         return redirect(url_for("admin.index"))
     return redirect(url_for("main.restaurants"))
 
