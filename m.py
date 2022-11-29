@@ -1,8 +1,8 @@
 
 from models import *
 
-# rawi = User(first_name='rawi',last_name='daniel',email='rawi@gmail.com',password='rawi12345', is_admin=True)
-# rawi.save()
+rawi = User(first_name='rawi',last_name='daniel',email='rawi@gmail.com',password='rawi12345', is_admin=True)
+rawi.save()
 # li = {'first_name': 'ikram','last_name':'awol','email':'ikram@gmail.com','password':'ikram12345'}
 # ikram = User(**li)
 # ikram.save()
@@ -23,7 +23,7 @@ from models import *
 # we are sensitive to the needs of our vegan customers. Traditionally we prepare many authentic Ethiopian 
 # dishes that are vegan, without the use of any animal products.""")
 # natani.save()
-
+'''
 firfir = Food(name="INJERA FIRFIR", image="firfir.jpg", price=234.67, recipe="injera, hot spice berbere, clarified butter" ,description="""Injera Firfir is an Ethiopian food typically 
 served for breakfast. It is generally made with shredded flat injera, spiced clarified butter (called niter kibbeh 
 in Amharic), and the hot spice berbere. The injera is torn into small bite size rolls or pieces, marinated in the 
@@ -45,4 +45,4 @@ fish = Food(name="SHIRO FASTING KATEGNA SPECIAL WITH FISH", image="fasting.jpg",
 injera topped with a variety of strictly vegan curries and vegetables available. The mixed Kategna vegetarian plate 
 offers a little bit of everything so that you get some real variety in your meal.""", restaurant_id="aea789b4-bf78-4e49-8717-e732dc18fdaf")
 fish.save()
-
+'''
