@@ -9,6 +9,18 @@ from models import storage
 main = Blueprint("main", __name__)
 
 
+def rate_counter(rates):
+    count_dict = {}
+    for i in range(5):
+        count_dict[i + 1] = 0
+    
+    for rate in rates:
+        rate = int(rate)
+        count_dict[rate] += 1
+        
+    return count_dict
+
+
 def averageRate(rate):
     """Retervie the total rate of food review"""
     total = 0
@@ -65,9 +77,10 @@ def reviews():
     reviews = food.reviews
     foodRate = [val.rate for val in reviews]
     food_rate = averageRate(foodRate)
+    rate_count = rate_counter(foodRate)
     restaurant_contact = "+251 93939483"
     return render_template("review.html", restaurant=restaurant,
                            food_rate=food_rate, food=food,
-                           user_id=current_user.id,
+                           user_id=current_user.id, rate_count=rate_count,
                            user_name=current_user.first_name,
                            reviews=reviews)
