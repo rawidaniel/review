@@ -131,6 +131,19 @@ nav .user-ctl a {
   display: none;
 }
 
+a[href="/logout"] {
+  background-color: transparent;
+  color: white;
+  display: inline-block;
+  height: auto;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+a[href="/logout"]:hover {
+  background-color: darkred;
+}
+
 
 @media (width < 1000px) {
   nav {
