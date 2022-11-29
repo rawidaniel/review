@@ -13,7 +13,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route("/login")
 def login():
-`x`    """Reterive login page"""
+    """Reterive login page"""
     if current_user.is_authenticated:
         return redirect(url_for("main.restaurants"))
     return render_template("login.html")
