@@ -11,4 +11,4 @@ COPY . .
 ENV ADDIS_STORAGE=db ADDIS_USER=addis_user ADDIS_PWD=addis_pwd
 EXPOSE 5001:5001
 
-CMD [ "python", "flask run" ]
+CMD [ "python -m", "gunicorn --bind 0.0.0.0:5001 app:app" ]
