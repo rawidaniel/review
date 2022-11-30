@@ -60,8 +60,10 @@ def create_review(food_id):
     '''
     user_id = request.get_json()
     user_id = user_id["user_id"]
-    review_user_id = [review.user_id for review in storage.all('Review').values()]
-    if str(user_id) in review_user_id:
+    review_user_id = [review.user_id for review in storage.all('Review').values()\
+                      if review.food_id == food_id]
+    if user_id in review_user_id:
+        print('user find')
         abort(404)
     elif storage.get("Food", food_id) is None:
         abort(404)
