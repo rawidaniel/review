@@ -73,6 +73,11 @@ docker exec Addis-review-API
 to run it on the background
 #
 Or to run it using flask
+- first you need to install required dependencies by running the following command, assuming you have python3 installed on your machine
+```python
+pip3 -r install requirements.txt
+```
+- Now you can run the app safely
 ```python
 flask run
 ```
